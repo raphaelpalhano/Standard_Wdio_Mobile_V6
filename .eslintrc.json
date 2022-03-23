@@ -1,0 +1,72 @@
+{
+    "env": {
+      "es2020": true,
+      "node": true,
+      "mocha": true
+
+    },
+    "globals": {
+      "browser": true,
+      "driver": true,
+      "$": true
+    },
+    "parser": "babel-eslint",
+    "extends": [
+      "airbnb-base",
+      "prettier"
+    ],
+    "parserOptions": {
+
+      "sourceType": "module",
+      "allowImportExportEverywhere": true
+    },
+    "rules": {
+      "import/no-unresolved": "error",
+      "import/prefer-default-export": "off",
+      "no-console": "warn",
+      "quotes": [
+        "error" ,
+        "single",  {  "avoidEscape" : false ,  "allowTemplateLiterals" : true  }
+       ],
+
+      "max-len": [
+        "error",
+        {
+          "code": 130
+        }
+      ],
+      "indent": [
+        "error",
+        2
+      ],
+      "arrow-spacing": [
+        "error",
+        {
+          "before": true,
+          "after": true
+        }
+      ],
+      "array-bracket-newline": [
+        "error",
+        "always"
+      ],
+      "semi": [2, "always"]
+    },
+    "overrides": [
+      {
+        "files": [
+          "config/wdio.conf.js"
+        ],
+        "rules": {
+
+          "max-len": [
+            "error",
+            {
+              "code": 130
+            }
+          ]
+        }
+      }
+    ]
+
+  }

@@ -1,0 +1,30 @@
+### macOS ###
+*.DS_Store
+.AppleDouble
+.LSOverride
+
+### Node ###
+# Logs
+npm-debug.log*
+
+# Dependency directories
+node_modules/
+
+#reports
+reports/html/assets
+reports/html/features
+reports/html/index.html
+reports/json/*.json
+
+
+#browsertacks
+local.log
+
+
+# Optional npm cache directory
+.npm
+
+# Webstrom directories
+.idea
+
+.vscode

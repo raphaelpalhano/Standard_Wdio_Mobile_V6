@@ -1,0 +1,38 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- structure_components
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '10.x'
+  displayName: 'Install Node.js'
+
+- task: BrowserStackConfig@0
+  inputs:
+    BrowserStackServiceEndPoint: 'BrowserStack Connection'
+    browserstackLocal: true
+
+- script: |
+    npm ci
+  displayName: 'Install Dependencies'
+- script: |
+    npm run androidStack
+  continueOnError: true
+  displayName: 'Run Tests'
+
+- task: PublishCucumberReport@1
+  inputs:
+    jsonDir: './reports/json/'
+    outputPath: './reports/json/'
+    theme: 'bootstrap'
+    reportSuiteAsScenarios: true
+
+- task: BrowserStackStopLocal@0
