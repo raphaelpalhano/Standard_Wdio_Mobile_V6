@@ -2,7 +2,7 @@ Feature: Pesquisar produtos pela barra de pesquisa no App Pague Menos
 
     Role:
     Como cliente da Pague menos
-    Quero buscar por produtos
+    Quero buscar por produtos na barra de pesquisa
 
 
   Background: Acessando o App com usuário padrão

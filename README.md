@@ -4,6 +4,26 @@
 
 ![flow_mobile.drawio.png](./flows/flow_mobile.drawio.png)
 
+## 1. Feature:
+**Criação da branch feature e Desenvolvimento/Adaptação de cenários para automação - Gherkin**
+
+## 2. Steps:
+**Escrever os steps do cenários em cucumber com a linguagem javascript**
+
+## 3. ScreenManager:
+
+**Mapear os seletores no módulo e atribuir os seletores ao ScreenManager**
+
+## 4. Screen/Pages:
+
+**Desenvolver o script para o comportamento o driver no ambiente nativo/web**
+
+
+## 5 Execução dos testes
+
+
+
+
 # Base
 
 - WebdriverIO v6
@@ -172,7 +192,7 @@ const switch = await $(`-ios predicate string:${selector}`)
 
 ~~~yml
 
-sintaxe: '-ios class chain:**/XCUIElementType{Table/Cell/...}[`name "..."]'
+sintaxe: '-ios class chain:**/XCUIElementType{Table/Cell/...}[`name "..."`]'
 
 const selector = '**/XCUIElementTypeCell[`name BEGINSWITH "D"`]/**/XCUIElementTypeButton'
 const button = await $(`-ios class chain:${selector}`)
