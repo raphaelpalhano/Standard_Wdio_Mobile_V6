@@ -1,14 +1,14 @@
-const createCapabilities = (AndroidInfo) => {
+const createCapabilities = (DeviceInfo) => {
   const listObjects = new Array();
   let objects = {};
-  for(let count = 0; count < AndroidInfo.deviceName().length; count++){
+  for(let count = 0; count < DeviceInfo.deviceName().length; count++){
     objects = {
-      project: AndroidInfo.project(),
-      build: AndroidInfo.build(),
-      name: AndroidInfo.name(),
-      device: AndroidInfo.deviceName()[count],
-      os_version: AndroidInfo.osVersion()[count],
-      app: process.env.BROWSERSTACK_APP_ID || AndroidInfo.appName(),
+      project: DeviceInfo.project(),
+      build: DeviceInfo.build(),
+      name: DeviceInfo.name(),
+      device: DeviceInfo.deviceName()[count],
+      os_version: DeviceInfo.osVersion()[count],
+      app: process.env.BROWSERSTACK_APP_ID || DeviceInfo.appName(),
       'browserstack.local': true,
       'browserstack.debug': true
     }

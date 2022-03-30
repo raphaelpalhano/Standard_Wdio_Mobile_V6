@@ -19,8 +19,41 @@ module.exports = {
     };
   },
 
+  menuApp:(condition) => {
+    if(condition){
+      return {
+        HOMETAB: $('~Home, tab, 1 of 5'),
+        CATEGORIASTAB: $('~Categorias, tab, 2 of 5'),
+        LOJASTAB: $('~Lojas, tab, 3 of 5'),
+        FAVORITOSTAB: $('~Favoritos, tab, 4 of 5'),
+        MAISTAB: $('Mais, tab, 5 of 5'),
+      };
+    }
+    return '';
+  },
 
+  maisOpcoes:(condition) => {
+    if(condition){
+      return {
+        ENTRAR: $('~btn-entrar')
+      };
+    }
+    return '';
+
+  },
+
+  login:(condition) => {
+    if(condition){
+      return {
+        EMAIL: $('~input-email'),
+        PASSWORD: $('~input-senha'),
+        CONTINUAR: $('~btn-continuar'),
+        CADASTRAR: $('~btn-cadastrar')
+      };
+    }
+    return '';
+
+  }
 
 };
-
 

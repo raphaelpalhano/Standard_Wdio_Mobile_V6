@@ -11,6 +11,8 @@ module.exports = class ScreenManagerMobile{
     return this.selectorsHome;
   }
 
+
+
 };
 
 
