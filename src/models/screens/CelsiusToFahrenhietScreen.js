@@ -9,6 +9,7 @@ export class CelsiusToFahrenhietScreen extends BaseScreen {
   static dismissAppRatingIfPresent() {
     if (ScreenManagerMobile.celsiusToFahrenheit.APPMESSAGE.isDisplayed()) {
       ScreenManagerMobile.celsiusToFahrenheit.LATERBUTTON.click();
+
     }
   }
 
