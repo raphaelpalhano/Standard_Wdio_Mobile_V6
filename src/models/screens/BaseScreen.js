@@ -16,7 +16,7 @@ export class BaseScreen{
   }
 
   static waitForElement(element, waitTimeInSeconds) {
-    element.waitForDisplayed(waitTimeInSeconds * 1000);
+    $(element).waitForDisplayed(waitTimeInSeconds * 1000);
   }
 
 

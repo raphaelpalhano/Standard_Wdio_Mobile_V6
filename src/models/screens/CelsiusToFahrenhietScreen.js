@@ -7,8 +7,8 @@ export class CelsiusToFahrenhietScreen extends BaseScreen {
 
 
   static dismissAppRatingIfPresent() {
-    if (ScreenManagerMobile.celsiusToFahrenheit.APPMESSAGE.isDisplayed()) {
-      ScreenManagerMobile.celsiusToFahrenheit.LATERBUTTON.click();
+    if ($(ScreenManagerMobile.celsiusToFahrenheit.APPMESSAGE).isDisplayed()) {
+      $(ScreenManagerMobile.celsiusToFahrenheit.LATERBUTTON).click();
 
     }
   }
@@ -22,14 +22,14 @@ export class CelsiusToFahrenhietScreen extends BaseScreen {
   static enterCelsius(celsiusValue) {
     this.dismissAppRatingIfPresent();
     super.waitForElement(ScreenManagerMobile.celsiusToFahrenheit.TEXTFIELDCELSIUS, 4);
-    ScreenManagerMobile.celsiusToFahrenheit.TEXTFIELDCELSIUS.clearValue();
-    ScreenManagerMobile.celsiusToFahrenheit.TEXTFIELDCELSIUS.addValue(celsiusValue);
-    ScreenManagerMobile.celsiusToFahrenheit.CONVERTBUTTONCTOF.click();
+    $(ScreenManagerMobile.celsiusToFahrenheit.TEXTFIELDCELSIUS).clearValue();
+    $(ScreenManagerMobile.celsiusToFahrenheit.TEXTFIELDCELSIUS).addValue(celsiusValue);
+    $(ScreenManagerMobile.celsiusToFahrenheit.CONVERTBUTTONCTOF).click();
   }
 
   static verifyFahrenheitValue(fahrenheitValue) {
     super.waitForElement(ScreenManagerMobile.celsiusToFahrenheit.TEXTFIELDFAHRENHEIT, 4);
-    ScreenManagerMobile.celsiusToFahrenheit.TEXTFIELDFAHRENHEIT.getText().should.equal(fahrenheitValue);
+    $(ScreenManagerMobile.celsiusToFahrenheit.TEXTFIELDFAHRENHEIT).getText().should.equal(fahrenheitValue);
 
   }
 }
