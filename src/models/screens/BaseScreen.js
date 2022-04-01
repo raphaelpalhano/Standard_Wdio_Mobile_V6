@@ -8,7 +8,6 @@ export class BaseScreen{
   static switchToNativeContext() {
     browser.switchContext('NATIVE_APP');
 
-
   }
 
   static pause(seconds) {
@@ -19,6 +18,17 @@ export class BaseScreen{
     $(element).waitForDisplayed(waitTimeInSeconds * 1000);
   }
 
+  static sleepForElement(element, seconds){
+    $(element).pause(seconds * 1000);
+  }
+
+  static clickElement(element){
+    $(element).click();
+  }
+
+  static typeValue(element, value){
+    $(element).addValue(value);
+  }
 
 }
 

@@ -12,6 +12,8 @@ config.capabilities = [
         automationName: 'uiautomator2',
         deviceName: AndroidInfo.deviceName(),
         platformVersion: AndroidInfo.platFormVersion(),
+        //appPackage: AndroidInfo.packageName(),
+        //appActivity: AndroidInfo.activity()
         app: path.resolve(`./apps/${AndroidInfo.appName()}`)
     }
 ];

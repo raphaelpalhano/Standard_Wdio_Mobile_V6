@@ -8,18 +8,25 @@ module.exports = {
     return elementsDevice.celsiusToFahrenheitIos;
   },
 
+  home:(condition) => {
+    if(condition){
+      return elementsDevice.homeAndroid;
+    }
+    return elementsDevice.homeIos;
+  },
+
   menuApp:(condition) => {
     if(condition){
       return elementsDevice.menuApp;
     }
-    return '';
+    return elementsDevice.menuApp;
   },
 
-  maisOpcoes:(condition) => {
+  moreOptions:(condition) => {
     if(condition){
-      return elementsDevice.maisOpcoes;
+      return elementsDevice.moreOptions;
     }
-    return '';
+    return elementsDevice.moreOptions;
 
   },
 
@@ -27,7 +34,7 @@ module.exports = {
     if(condition){
       return elementsDevice.login;
     }
-    return '';
+    return elementsDevice.login;
 
   }
 

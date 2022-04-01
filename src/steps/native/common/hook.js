@@ -1,6 +1,9 @@
 import { Before } from 'cucumber';
-import { CelsiusToFahrenhietScreen } from '../../../models/screens/CelsiusToFahrenhietScreen';
+import { HomeScreen } from '../../../models/screens/HomeScreen';
+// import { CelsiusToFahrenhietScreen } from '../../../models/screens/CelsiusToFahrenhietScreen';
 
 Before(() => {
-  CelsiusToFahrenhietScreen.launchApp();
+  // CelsiusToFahrenhietScreen.launchApp();
+  HomeScreen.launchApp();
+  HomeScreen.goToHome();
 });

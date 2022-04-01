@@ -24,7 +24,7 @@ exports.config = {
 
     bail: 0,
     // Default timeout for all waitFor* commands.
-    waitforTimeout: 10000,
+    waitforTimeout: 20000,
 
     connectionRetryTimeout: 120000,
     //
@@ -79,8 +79,11 @@ exports.config = {
 
     before: function() {
       require('@babel/register');
-      ScreenManagerMobile.setCelsiusToFahrenheit();
-
+      //ScreenManagerMobile.setCelsiusToFahrenheit();
+      ScreenManagerMobile.setMenu();
+      ScreenManagerMobile.setMoreOptions();
+      ScreenManagerMobile.setLogin();
+      ScreenManagerMobile.setHome();
      },
 
 
