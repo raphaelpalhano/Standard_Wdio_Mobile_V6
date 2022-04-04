@@ -2,41 +2,62 @@ const selectorsControl =  require('../../utils/componentControl');
 
 module.exports = {
   celsiusToFahrenheit: {
-    TEXTFIELDCELSIUS: 'id:editTextC',
-    TEXTFIELDFAHRENHEIT: 'id:editTextF',
-    CONVERTBUTTONCTOF: 'id:btncnvCF',
-    APPMESSAGE: 'id:message',
-    LATERBUTTON: 'id:button3',
+    TEXTFIELD:(value) => $(`id:editText${value}`),
+    CONVERTBUTTONCTOF:() => $('id:btncnvCF'),
+    APPMESSAGE:() =>  $('id:message'),
+    LATERBUTTON:() => $('id:button3'),
   },
   celsiusToFahrenheitIos:{
-    TEXTFIELDCELSIUS: `${selectorsControl.ios().predicate}type == 'XCUIElementTypeSwitch' && name CONTAINS 'Allow'`,
-    CONVERTBUTTONCTOF: `${selectorsControl.ios().predicate}type == 'XCUIElementTypeSwitch' && name CONTAINS 'Allow'`,
-    APPMESSAGE:  `${selectorsControl.ios().predicate}type == 'XCUIElementTypeSwitch' && name CONTAINS 'Allow'`,
-    LATERBUTTON: `${selectorsControl.ios().predicate}type == 'XCUIElementTypeSwitch' && name CONTAINS 'Allow'`
+    TEXTFIELD:(value) =>
+      $(`${selectorsControl.ios().predicate}type == 'XCUIElementTypeSwitch' && name CONTAINS '${value}'`),
+    CONVERTBUTTONCTOF:() => $(`${selectorsControl.ios().predicate}type == 'XCUIElementTypeSwitch' && name CONTAINS 'Allow'`),
+    APPMESSAGE:() => $(`${selectorsControl.ios().predicate}type == 'XCUIElementTypeSwitch' && name CONTAINS 'Allow'`),
+    LATERBUTTON:() => $( `${selectorsControl.ios().predicate}type == 'XCUIElementTypeSwitch' && name CONTAINS 'Allow'`),
   },
   homeAndroid: {
-    UPDATEOPTION: '//android.widget.TextView[@text="Atualizar mais tarde"]',
+    UPDATEOPTION:() => $( '//android.widget.TextView[@text="Atualizar mais tarde"]'),
+  },
+  headerAndroid:{
+    SEARCHBAR:() => $('~btn-pesquisa'),
+    SEARCHINPUT:() => $('~input-pesquisa'),
+    MAGNIFYINGLASS:() => $('~btn-pesquisar-lupa'),
+  },
+  headerIos:{
+    SEARCHBAR:() => $('~btn-pesquisa'),
+    SEARCHINPUT:() => $( '~input-pesquisa'),
+    MAGNIFYINGLASS:() => $( '~btn-pesquisar-lupa'),
   },
   homeIos: {
-    UPDATEOPTION: '//android.widget.TextView[@text="Atualizar mais tarde"]',
+    UPDATEOPTION:() => $( '//android.widget.TextView[@text="Atualizar mais tarde"]'),
   },
   menuApp:{
-    HOMETAB: '~Home, tab, 1 of 5',
-    CATEGORIASTAB: '~Categorias, tab, 2 of 5',
-    LOJASTAB: '~Lojas, tab, 3 of 5',
-    FAVORITOSTAB: '~Favoritos, tab, 4 of 5',
-    MORETAB: '~Mais, tab, 5 of 5',
+    HOMETAB:() => $('~Home, tab, 1 of 5'),
+    CATEGORIASTAB:() => $( '~Categorias, tab, 2 of 5'),
+    LOJASTAB:() => $( '~Lojas, tab, 3 of 5'),
+    FAVORITOSTAB:() => $( '~Favoritos, tab, 4 of 5'),
+    MORETAB:() => $( '~Mais, tab, 5 of 5'),
   },
   moreOptions:{
-    ENTERBUTTON: '~btn-entrar'
+    ENTERBUTTON:() => $( '//android.widget.TextView[@text="Entrar"]'),
+    EXITBUTTON:() => $( '//android.widget.TextView[@text="Sair"]'),
   },
   login:{
-    EMAIL: '~input-email',
-    PASSWORD: '~input-senha',
-    CONTINUEBUTTON: '~btn-continuar',
-    SIGNBUTTON: '~btn-cadastrar'
+    EMAIL:() => $('~input-email'),
+    PASSWORD:() => $('~input-senha'),
+    CONTINUEBUTTON:() => $('~btn-continuar'),
+    SIGNBUTTON:() => $('~btn-cadastrar')
+  },
+  productSearchResult:{
+    DETAILS:() => $('~btn-detalhes-produto'),
+    ACESSDETAILS:(productText) => $(`//android.widget.TextView[@text="${productText}"]`),
+
+  },
+  productDetails:{
+    PRODUCT:(text) => $(`//android.widget.TextView[@text="${text}"]`)
   }
 
+
 };
+
 
 

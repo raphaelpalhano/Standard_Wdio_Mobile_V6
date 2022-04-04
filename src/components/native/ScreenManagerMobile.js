@@ -5,15 +5,15 @@ module.exports = class ScreenManagerMobile{
 
 
   static setCelsiusToFahrenheit(){
-    this.selectorsHome = selectorDevices.celsiusToFahrenheit(driver.isAndroid);
-  }
-
-  static get celsiusToFahrenheit(){
-    return this.selectorsHome;
+    this.celsiusElements = selectorDevices.celsiusToFahrenheit(driver.isAndroid);
   }
 
   static setHome(){
     this.homeElements = selectorDevices.home(driver.isAndroid);
+  }
+
+  static setHeader(){
+    this.headerElements = selectorDevices.header(driver.isAndroid);
   }
 
   static setMenu(){
@@ -30,6 +30,13 @@ module.exports = class ScreenManagerMobile{
     this.loginElements = selectorDevices.login(driver.isAndroid);
   }
 
+  static setProductSeachResult(){
+    this.productsearchResultElements = selectorDevices.productSearchResult(driver.isAndroid);
+  }
+
+  static setProductDetails(){
+    this.productDetailsElements = selectorDevices.productDetails(driver.isAndroid);
+  }
 
 };
 

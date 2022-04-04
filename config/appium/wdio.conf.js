@@ -79,12 +79,16 @@ exports.config = {
 
     before: function() {
       require('@babel/register');
-      //ScreenManagerMobile.setCelsiusToFahrenheit();
+      ScreenManagerMobile.setCelsiusToFahrenheit();
+      ScreenManagerMobile.setHome();
+      ScreenManagerMobile.setHeader();
       ScreenManagerMobile.setMenu();
       ScreenManagerMobile.setMoreOptions();
       ScreenManagerMobile.setLogin();
-      ScreenManagerMobile.setHome();
-     },
+      ScreenManagerMobile.setProductSeachResult();
+      ScreenManagerMobile.setProductDetails();
+
+    },
 
 
     onComplete: function(exitCode, config, capabilities, results) {

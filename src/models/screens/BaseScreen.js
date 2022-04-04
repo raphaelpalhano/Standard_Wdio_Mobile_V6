@@ -15,20 +15,14 @@ export class BaseScreen{
   }
 
   static waitForElement(element, waitTimeInSeconds) {
-    $(element).waitForDisplayed(waitTimeInSeconds * 1000);
+    element.waitForDisplayed(waitTimeInSeconds * 1000);
   }
 
   static sleepForElement(element, seconds){
-    $(element).pause(seconds * 1000);
+    element.pause(seconds * 1000);
+
   }
 
-  static clickElement(element){
-    $(element).click();
-  }
-
-  static typeValue(element, value){
-    $(element).addValue(value);
-  }
 
 }
 

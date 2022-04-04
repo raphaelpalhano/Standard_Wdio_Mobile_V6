@@ -10,13 +10,16 @@ export class HomeScreen extends BaseScreen{
   static launchApp() {
     super.launchApp();
     super.switchToNativeContext();
-
+    super.sleepForElement(ScreenManagerMobile.menuElements.HOMETAB(), 6);
   }
 
-  static goToHome(){
-    super.clickElement(ScreenManagerMobile.homeElements.UPDATEOPTION);
-    super.sleepForElement(ScreenManagerMobile.menuElements.MORETAB, 7);
-  }
+  static updateLater(){
+    if( ScreenManagerMobile.homeElements.UPDATEOPTION().isDisplayed()){
+      ScreenManagerMobile.homeElements.UPDATEOPTION().click();
+      super.sleepForElement(ScreenManagerMobile.menuElements.HOMETAB(), 7);
+    }
 
+
+  }
 
 }

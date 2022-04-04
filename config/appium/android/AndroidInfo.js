@@ -8,15 +8,15 @@ class AndroidInfo {
     }
 
     static appName() {
-        return 'app-debug.apk'; // pass the apk name
+        return 'Farmácias Pague Menos_31.17_apkcombo.com.apk'; // pass the apk name
     }
 
     static packageName(){
-      return 'br.com.paguemenos.anjodaguarda';
+      return 'com.google.android.apps.nexuslauncher';
     }
 
     static activity(){
-      return 'br.com.paguemenos.anjodaguarda.MainActivity';
+      return 'com.google.android.apps.nexuslauncher.NexusLauncherActivity';
     }
 }
 

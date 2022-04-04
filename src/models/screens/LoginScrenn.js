@@ -9,9 +9,9 @@ const dataUser = Factory.getUserToLogin('valid');
 export class LoginScreen extends BaseScreen{
 
   static logIn(){
-    super.typeValue(ScreenManagerMobile.loginElements.EMAIL, dataUser.email);
-    super.typeValue(ScreenManagerMobile.loginElements.PASSWORD,dataUser.password);
-    super.clickElement(ScreenManagerMobile.loginElements.CONTINUEBUTTON);
+    ScreenManagerMobile.loginElements.EMAIL().addValue( dataUser.email);
+    ScreenManagerMobile.loginElements.PASSWORD().addValue(dataUser.password);
+    ScreenManagerMobile.loginElements.CONTINUEBUTTON().click();
   }
 
 

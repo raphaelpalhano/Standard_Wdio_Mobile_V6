@@ -1,0 +1,59 @@
+version: "2.2"
+
+services:
+  selenium_hub:
+    image: selenium/hub:3.11.0-bismuth
+    ports:
+      - "4444:4444"
+
+  real_device:
+    image: appium/appium
+    depends_on:
+      - selenium_hub
+    network_mode: "service:selenium_hub"
+    privileged: true
+    volumes:
+      - /dev/bus/usb:/dev/bus/usb
+      - ~/.android:/root/.android
+      - ./apps/Celsius Fahrenheit Converter_v1.0.1_apkpure.com:/opt
+    environment:
+      - CONNECT_TO_GRID=True
+      - SELENIUM_HOST=selenium_hub
+
+
+  samsung_galaxy_web_7.1.1:
+    image: butomo1989/docker-android-x86-7.1.1
+    privileged: true
+    depends_on:
+      - selenium_hub
+      - real_device
+    ports:
+      - 6080:6080
+    volumes:
+      - ./devices/video-samsung_genymotion:/tmp/video
+    environment:
+      - DEVICE=Samsung Galaxy S6
+      - CONNECT_TO_GRID=True
+      - APPIUM=true
+      - SELENIUM_HOST=selenium_hub
+      - MOBILE_WEB_TEST=True
+      - AUTO_RECORD=True
+
+  nexus_5.1.1:
+    image: butomo1989/docker-android-x86-5.1.1
+    privileged: true
+    depends_on:
+      - selenium_hub
+      - real_device
+    ports:
+      - 6081:6080
+    volumes:
+      - ./devices/video-nexus_genymotion:/tmp/video
+    environment:
+      - DEVICE=Nexus 5
+      - CONNECT_TO_GRID=True
+      - APPIUM=true
+      - SELENIUM_HOST=selenium_hub
+      - MOBILE_WEB_TEST=True
+      - AUTO_RECORD=True
+

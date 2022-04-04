@@ -15,6 +15,13 @@ module.exports = {
     return elementsDevice.homeIos;
   },
 
+  header:(condition) => {
+    if(condition){
+      return elementsDevice.headerAndroid;
+    }
+    return elementsDevice.headerIos;
+  },
+
   menuApp:(condition) => {
     if(condition){
       return elementsDevice.menuApp;
@@ -36,6 +43,20 @@ module.exports = {
     }
     return elementsDevice.login;
 
-  }
+  },
+  productSearchResult:(condition) => {
+    if(condition){
+      return elementsDevice.productSearchResult;
+    }
+    return elementsDevice.productSearchResult;
 
+  },
+
+  productDetails:(condition) => {
+    if(condition){
+      return elementsDevice.productDetails;
+    }
+    return elementsDevice.productDetails;
+
+  },
 };

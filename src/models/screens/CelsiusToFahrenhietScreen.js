@@ -1,4 +1,3 @@
-// import {CelsiusToFahrenheitElements} from '../../components/native/CelsiusToFahrenheitElements';
 import {BaseScreen} from './BaseScreen';
 
 const ScreenManagerMobile = require('../../components/native/ScreenManagerMobile');
@@ -7,8 +6,8 @@ export class CelsiusToFahrenhietScreen extends BaseScreen {
 
 
   static dismissAppRatingIfPresent() {
-    if ($(ScreenManagerMobile.celsiusToFahrenheit.APPMESSAGE).isDisplayed()) {
-      $(ScreenManagerMobile.celsiusToFahrenheit.LATERBUTTON).click();
+    if (ScreenManagerMobile.celsiusElements.APPMESSAGE().isDisplayed()) {
+      ScreenManagerMobile.celsiusElements.LATERBUTTON().click();
 
     }
   }
@@ -21,15 +20,15 @@ export class CelsiusToFahrenhietScreen extends BaseScreen {
 
   static enterCelsius(celsiusValue) {
     this.dismissAppRatingIfPresent();
-    super.waitForElement(ScreenManagerMobile.celsiusToFahrenheit.TEXTFIELDCELSIUS, 4);
-    $(ScreenManagerMobile.celsiusToFahrenheit.TEXTFIELDCELSIUS).clearValue();
-    $(ScreenManagerMobile.celsiusToFahrenheit.TEXTFIELDCELSIUS).addValue(celsiusValue);
-    $(ScreenManagerMobile.celsiusToFahrenheit.CONVERTBUTTONCTOF).click();
+    super.waitForElement(ScreenManagerMobile.celsiusElements.TEXTFIELD('C'), 4);
+    ScreenManagerMobile.celsiusElements.TEXTFIELD('C').clearValue();
+    ScreenManagerMobile.celsiusElements.TEXTFIELD('C').addValue( celsiusValue);
+    ScreenManagerMobile.celsiusElements.CONVERTBUTTONCTOF().click();
   }
 
   static verifyFahrenheitValue(fahrenheitValue) {
-    super.waitForElement(ScreenManagerMobile.celsiusToFahrenheit.TEXTFIELDFAHRENHEIT, 4);
-    $(ScreenManagerMobile.celsiusToFahrenheit.TEXTFIELDFAHRENHEIT).getText().should.equal(fahrenheitValue);
+    super.waitForElement(ScreenManagerMobile.celsiusElements.TEXTFIELD('F'), 4);
+    ScreenManagerMobile.celsiusElements.TEXTFIELD('F').getText().should.equal(fahrenheitValue);
 
   }
 }
