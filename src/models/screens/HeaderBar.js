@@ -10,7 +10,7 @@ export class HeaderBar extends BaseScreen{
     ScreenManagerMobile.headerElements.SEARCHBAR().click();
     ScreenManagerMobile.headerElements.SEARCHINPUT().addValue(nameProduct);
     ScreenManagerMobile.headerElements.MAGNIFYINGLASS().click();
-    super.sleepForElement(ScreenManagerMobile.productsearchResultElements.ACESSDETAILS(nameProduct), 3);
+
   }
 
 

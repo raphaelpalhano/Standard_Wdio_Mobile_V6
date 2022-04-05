@@ -22,7 +22,6 @@ Feature: Pesquisar produtos pela barra de pesquisa no App Pague Menos
   |Shampoo Pantene Restauração 175ml        | Referência: 50211    |
 
 
-
   @androidApp
   Scenario Outline: Buscando por Suplevit Mulher com usuario deslogado
   Given que não esteja logado
@@ -34,4 +33,11 @@ Feature: Pesquisar produtos pela barra de pesquisa no App Pague Menos
   |nome                                     |referencia            |
   |Suplevit Mulher Com 30 Cápsulas          | Referência: 59280    |
   |Suplevit Mulher Com 60 Cápsulas          | Referência: 47376    |
+
+
+   @androidApp
+  Scenario: Buscando por produto que não existe com usuario deslogado
+  Given que não esteja logado
+  When buscar pelo produto "Maquinazick"
+  Then deve exibir o texto "0 produtos"
 

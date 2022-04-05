@@ -66,6 +66,7 @@ exports.config = {
     },
 
     reporters: [
+
         [
             'cucumberjs-json', {
                 jsonFolder: './reports/json',

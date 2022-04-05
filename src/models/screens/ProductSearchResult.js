@@ -11,5 +11,10 @@ export class ProductSearchResult extends BaseScreen{
 
   }
 
+  static getTextZeroResult(){
+    return ScreenManagerMobile.productsearchResultElements.ZERORESULTS().getText();
+  }
+
+
 
 }

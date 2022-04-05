@@ -16,6 +16,11 @@ module.exports = {
   },
   homeAndroid: {
     UPDATEOPTION:() => $( '//android.widget.TextView[@text="Atualizar mais tarde"]'),
+    ALLOWLOCATION:() => $('id:com.android.permissioncontroller:id/permission_allow_foreground_only_button')
+  },
+  homeIos: {
+    UPDATEOPTION:() => $( '//android.widget.TextView[@text="Atualizar mais tarde"]'),
+    ALLOWLOCATION:() => $('id:com.android.permissioncontroller:id/permission_allow_foreground_only_button')
   },
   headerAndroid:{
     SEARCHBAR:() => $('~btn-pesquisa'),
@@ -27,9 +32,7 @@ module.exports = {
     SEARCHINPUT:() => $( '~input-pesquisa'),
     MAGNIFYINGLASS:() => $( '~btn-pesquisar-lupa'),
   },
-  homeIos: {
-    UPDATEOPTION:() => $( '//android.widget.TextView[@text="Atualizar mais tarde"]'),
-  },
+
   menuApp:{
     HOMETAB:() => $('~Home, tab, 1 of 5'),
     CATEGORIASTAB:() => $( '~Categorias, tab, 2 of 5'),
@@ -50,11 +53,11 @@ module.exports = {
   productSearchResult:{
     DETAILS:() => $('~btn-detalhes-produto'),
     ACESSDETAILS:(productText) => $(`//android.widget.TextView[@text="${productText}"]`),
-
+    ZERORESULTS: () => $('//android.widget.TextView[@text="0 produtos"]')
   },
   productDetails:{
     PRODUCT:(text) => $(`//android.widget.TextView[@text="${text}"]`)
-  }
+  },
 
 
 };

@@ -19,7 +19,12 @@ export class HomeScreen extends BaseScreen{
       super.sleepForElement(ScreenManagerMobile.menuElements.HOMETAB(), 7);
     }
 
-
   }
+
+  static allowLocation(){
+    ScreenManagerMobile.homeElements.ALLOWLOCATION().click();
+  }
+
+
 
 }
