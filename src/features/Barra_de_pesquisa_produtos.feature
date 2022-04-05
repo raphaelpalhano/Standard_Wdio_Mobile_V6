@@ -8,7 +8,7 @@ Feature: Pesquisar produtos pela barra de pesquisa no App Pague Menos
 
 
   @androidApp
-  Scenario Outline: Buscando por Shampoo Pantene com usuario valido
+  Scenario Outline: Buscando por produto com usuario valido
   Given que efetua login
   When buscar pelo produto "<nome>"
   And acessa os detalhes do produto
@@ -21,7 +21,7 @@ Feature: Pesquisar produtos pela barra de pesquisa no App Pague Menos
 
 
   @androidApp
-  Scenario Outline: Buscando por Suplevit Mulher com usuario deslogado
+  Scenario Outline: Buscando por produto com usuario deslogado
   Given que não esteja logado
   When buscar pelo produto "<nome>"
   And acessa os detalhes do produto
