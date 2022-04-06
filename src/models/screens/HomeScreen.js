@@ -6,12 +6,26 @@ const ScreenManagerMobile = require('../../components/native/ScreenManagerMobile
 
 export class HomeScreen extends BaseScreen{
 
-
   static launchApp() {
     super.launchApp();
     super.switchToNativeContext();
-    super.sleepForElement(ScreenManagerMobile.menuElements.HOMETAB(), 6);
   }
+
+  static selectAllow(){
+    const index = ScreenManagerMobile.homeElements.LISTLOCATION('0').getText().includes('Permitir') === true ? '0' : '1';
+    const allow = ScreenManagerMobile.homeElements.LISTLOCATION(index).getText();
+    if( allow.includes('Allow') || allow.includes('Permitir')){
+      ScreenManagerMobile.homeElements.LISTLOCATION(index).click();
+    }
+
+  }
+
+
+
+  static waitHome(time){
+    super.sleepForElement(ScreenManagerMobile.menuElements.HOMETAB(), time);
+  }
+
 
   static updateLater(){
     if( ScreenManagerMobile.homeElements.UPDATEOPTION().isDisplayed()){
@@ -20,11 +34,5 @@ export class HomeScreen extends BaseScreen{
     }
 
   }
-
-  static allowLocation(){
-    ScreenManagerMobile.homeElements.ALLOWLOCATION().click();
-  }
-
-
 
 }

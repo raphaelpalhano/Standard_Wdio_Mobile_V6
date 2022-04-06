@@ -4,7 +4,7 @@ const IosInfo = require('./IosInfo');
 // Appium capabilities
 config.capabilities = [
     {
-        'cjson:metadata': {
+        /*'cjson:metadata': {
             device: 'MacBook Pro 15',
             platform: {
                 name: 'OSX',
@@ -19,7 +19,7 @@ config.capabilities = [
                 name: 'name.of.app.ipa',
                 version: '1.2.3',
             },
-        },
+        },*/
         platformName: 'iOS',
         noReset: true,
         fullReset: false,
@@ -27,6 +27,8 @@ config.capabilities = [
         automationName: 'XCUITest',
         deviceName: IosInfo.deviceName(),
         platformVersion: IosInfo.platFormVersion(),
+        locale: IosInfo.locale(),
+        language: IosInfo.language(),
         app: IosInfo.appName() // use - path.resolve(`./apps/${IosInfo.appName()}`) if passing a custom app
     }
 ];

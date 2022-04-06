@@ -12,6 +12,11 @@ config.capabilities = [
         automationName: 'uiautomator2',
         deviceName: AndroidInfo.deviceName(),
         platformVersion: AndroidInfo.platFormVersion(),
+        locale: AndroidInfo.locale(),
+        language: AndroidInfo.language(),
+        //autoGrantPermissions: true,
+        //autoAcceptAlerts: true,
+        //autoAcceptAlerts: 'true',
         app: path.resolve(`./apps/${AndroidInfo.appName()}`)
     }
 ];

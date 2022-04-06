@@ -1,4 +1,3 @@
-
 Feature: Pesquisar produtos pela barra de pesquisa no App Pague Menos
 
     Rule: Como cliente da Pague menos, quero buscar por produtos na barra de pesquisa

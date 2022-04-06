@@ -23,6 +23,8 @@
     "rules": {
       "import/no-unresolved": "error",
       "import/prefer-default-export": "off",
+      "no-undef": "off",
+      "no-restricted-syntax": ["off", "FunctionExpression", "WithStatement", "BinaryExpression[operator='in']"],
       "no-console": "warn",
       "quotes": [
         "error" ,
@@ -52,6 +54,7 @@
       ],
       "semi": [2, "always"]
     },
+
     "overrides": [
       {
         "files": [

@@ -8,7 +8,15 @@ class IosInfo {
     }
 
     static appName() {
-        return 'com.apple.Preferences'; // pass the bundleid or ipa name
+        return 'paguemenosapp.ipa'; // pass the bundleid or ipa name
+    }
+
+    static locale(){
+      return 'BR';
+    }
+
+    static language(){
+      return 'pt';
     }
 }
 

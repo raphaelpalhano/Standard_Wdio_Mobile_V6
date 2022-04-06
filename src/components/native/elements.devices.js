@@ -16,11 +16,14 @@ module.exports = {
   },
   homeAndroid: {
     UPDATEOPTION:() => $( '//android.widget.TextView[@text="Atualizar mais tarde"]'),
-    ALLOWLOCATION:() => $('id:com.android.permissioncontroller:id/permission_allow_foreground_only_button')
+    LISTLOCATION:(index) => $(`//android.widget.Button[@index="${index}"]`),
+    LOCATIONOPTIONS: (value) => $(`//android.widget.Button[@text="${value}"]`),
   },
   homeIos: {
     UPDATEOPTION:() => $( '//android.widget.TextView[@text="Atualizar mais tarde"]'),
-    ALLOWLOCATION:() => $('id:com.android.permissioncontroller:id/permission_allow_foreground_only_button')
+    LISTLOCATION:() => $('android.widget.LinearLayout'),
+    LOCATIONOPTIONS: (value) => $(`//android.widget.Button[@text="${value}"]`),
+
   },
   headerAndroid:{
     SEARCHBAR:() => $('~btn-pesquisa'),

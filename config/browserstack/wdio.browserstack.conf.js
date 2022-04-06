@@ -7,8 +7,8 @@ exports.config = {
     // ====================
     // Runner Configuration
     // ====================
-    user: process.env.BROWSERSTACK_USERNAME || 'raphaelangel_mzl52T',
-    key: process.env.BROWSERSTACK_ACCESS_KEY || 'YppBqMGQnSsssxKkuJ4R',
+    user: process.env.BROWSERSTACK_USERNAME || 'raphaelarevalos_guxVCF',
+    key: process.env.BROWSERSTACK_ACCESS_KEY || 'GtTRX5yDqePijE3zm4e5',
     services: [
         ['browserstack', {
             browserstackLocal: true
@@ -82,8 +82,14 @@ exports.config = {
 
     before: function() {
       require('@babel/register');
-      ScreenManagerMobile.setCelsiusToFahrenheit();
-
+      //ScreenManagerMobile.setCelsiusToFahrenheit();
+      ScreenManagerMobile.setHome();
+      ScreenManagerMobile.setHeader();
+      ScreenManagerMobile.setMenu();
+      ScreenManagerMobile.setMoreOptions();
+      ScreenManagerMobile.setLogin();
+      ScreenManagerMobile.setProductSeachResult();
+      ScreenManagerMobile.setProductDetails();
      },
     // Code to start browserstack local before start of test
     onPrepare: (config, capabilities) => {

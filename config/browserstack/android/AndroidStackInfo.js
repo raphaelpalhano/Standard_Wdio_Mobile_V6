@@ -1,7 +1,7 @@
 class AndroidStackInfo {
 
     static project(){
-     return 'First Webdriverio Android Project'
+     return 'Super App Pague menos - Android'
     }
 
     static build(){
@@ -9,7 +9,7 @@ class AndroidStackInfo {
     }
 
     static deviceName() {
-        return ['Google Pixel 3']; // pass the udid or devicename
+        return ['Samsung Galaxy S10']; // pass the udid or devicename
     }
 
     static osVersion() {
@@ -17,7 +17,7 @@ class AndroidStackInfo {
     }
 
     static appName() {
-        return 'bs://27ab507b404cae38095dd35c1d682515398fd24f'; // pass the apk name
+        return 'bs://1966616cf520f9b4a5a8e30c43cbae94792b1551'; // pass the apk name
     }
 
     static name(){
