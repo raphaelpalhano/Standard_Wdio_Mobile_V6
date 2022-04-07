@@ -21,7 +21,7 @@ config.capabilities = [
     }
 ];
 
-config.cucumberOpts.tagExpression = '@androidApp'; // pass tag to run tests specific to android
+//config.cucumberOpts.tagExpression = '@androidApp'; // pass tag to run tests specific to android
 
 exports.config = config;
 
