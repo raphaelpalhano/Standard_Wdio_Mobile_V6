@@ -11,12 +11,9 @@ export class HomeScreen extends BaseScreen{
     super.switchToNativeContext();
   }
 
-  static selectAllow(){
-    const index = ScreenManagerMobile.homeElements.LISTLOCATION('0').getText().includes('Permitir') === true ? '0' : '1';
-    const allow = ScreenManagerMobile.homeElements.LISTLOCATION(index).getText();
-    if( allow.includes('Allow') || allow.includes('Permitir')){
-      ScreenManagerMobile.homeElements.LISTLOCATION(index).click();
-    }
+  static selectAllow(index){
+    ScreenManagerMobile.homeElements.LISTLOCATION(index).click();
+
 
   }
 

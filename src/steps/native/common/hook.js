@@ -1,18 +1,16 @@
 
 import {After, Before} from 'cucumber';
 import ScreenManagerMobile from '../../../components/native/ScreenManagerMobile';
-// import { CelsiusToFahrenhietScreen } from '../../../models/screens/CelsiusToFahrenhietScreen';
 import { HomeScreen } from '../../../models/screens/HomeScreen';
+// import { CelsiusToFahrenhietScreen } from '../../../models/screens/CelsiusToFahrenhietScreen';
 
 Before(() => {
-  if(ScreenManagerMobile.homeElements.LISTLOCATION('0').isDisplayed()){
-    HomeScreen.selectAllow();
-  }
-  HomeScreen.waitHome(6);
-
-  // HomeScreen.updateLater();
+  const index = ScreenManagerMobile.homeElements.LISTLOCATION('0').getText().includes('Permitir') === true ? '0' : '1';
+  HomeScreen.selectAllow(index);
+  HomeScreen.waitHome(5);
 });
 
 After(() => {
   HomeScreen.launchApp();
+
 });
