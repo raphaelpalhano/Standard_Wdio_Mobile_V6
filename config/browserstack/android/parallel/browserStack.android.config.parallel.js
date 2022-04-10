@@ -1,6 +1,6 @@
 const {config} = require('../../wdio.browserstack.conf');
 const AndroidParallelInfo = require('./AndroidParallelInfo');
-const createCapabilities = require('../../utils/create.capabilities');
+const createCapabilities = require('../../utils/create.capabilitiesAndroid');
 
 
 config.capabilities = createCapabilities(AndroidParallelInfo);

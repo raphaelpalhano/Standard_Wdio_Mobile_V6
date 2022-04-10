@@ -20,7 +20,7 @@ class AndroidInfo {
     }
 
     static locale(){
-      return 'BR';
+      return 'br';
     }
 
     static language(){

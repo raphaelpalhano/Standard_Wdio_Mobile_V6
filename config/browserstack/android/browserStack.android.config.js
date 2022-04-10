@@ -1,9 +1,9 @@
 const {config} = require('../wdio.browserstack.conf');
 const AndroidStackInfo = require('./AndroidStackInfo');
-const createCapabilities = require('../utils/create.capabilities');
+const createCapabilitiesAndroid = require('../utils/create.capabilitiesAndroid');
 
 // Appium capabilities
-config.capabilities = createCapabilities(AndroidStackInfo);
+config.capabilities = createCapabilitiesAndroid(AndroidStackInfo);
 
 //config.cucumberOpts.tagExpression = '@androidApp'; // pass tag to run tests specific to android
 

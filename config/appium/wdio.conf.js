@@ -1,5 +1,9 @@
 const { generate } = require('multiple-cucumber-html-reporter');
+const { removeSync } = require('fs-extra');
+
 const ScreenManagerMobile = require('../../src/components/native/ScreenManagerMobile')
+
+
 
 exports.config = {
     // ====================
@@ -92,11 +96,13 @@ exports.config = {
     },
 
 
+
     onComplete: function(exitCode, config, capabilities, results) {
         generate({
             jsonDir: './reports/json',
             reportPath: './reports/html',
-            openReportInBrowser: true
+            openReportInBrowser: true,
+
         });
     },
 

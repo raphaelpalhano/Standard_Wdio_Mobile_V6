@@ -1,4 +1,5 @@
 import { Given } from 'cucumber';
+
 import { MenuBar } from '../../models/screens/MenuBar';
 
 

@@ -7,8 +7,8 @@ exports.config = {
     // ====================
     // Runner Configuration
     // ====================
-    user: process.env.BROWSERSTACK_USERNAME || 'raphaelarevalos_guxVCF',
-    key: process.env.BROWSERSTACK_ACCESS_KEY || 'GtTRX5yDqePijE3zm4e5',
+    user: process.env.BROWSERSTACK_USERNAME || 'raphaelangel_mzl52T',
+    key: process.env.BROWSERSTACK_ACCESS_KEY || 'YppBqMGQnSsssxKkuJ4R',
     services: [
         ['browserstack', {
             browserstackLocal: true
@@ -121,7 +121,8 @@ exports.config = {
         generate({
             jsonDir: './reports/json',
             reportPath: './reports/html',
-            openReportInBrowser: true
+            openReportInBrowser: true,
+
         });
     },
 

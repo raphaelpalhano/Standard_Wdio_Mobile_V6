@@ -14,9 +14,15 @@ export class HomeScreen extends BaseScreen{
   static selectAllow(index){
     ScreenManagerMobile.homeElements.LISTLOCATION(index).click();
 
-
   }
 
+  static selectAllowText(text){
+    if(ScreenManagerMobile.homeElements.LOCATIONOPTIONS(text).isDisplayed()){
+      const element = ScreenManagerMobile.homeElements.LOCATIONOPTIONS(text);
+      element.click();
+    }
+
+  }
 
 
   static waitHome(time){
@@ -25,11 +31,10 @@ export class HomeScreen extends BaseScreen{
 
 
   static updateLater(){
-    if( ScreenManagerMobile.homeElements.UPDATEOPTION().isDisplayed()){
-      ScreenManagerMobile.homeElements.UPDATEOPTION().click();
-      super.sleepForElement(ScreenManagerMobile.menuElements.HOMETAB(), 7);
-    }
-
+    if(ScreenManagerMobile.homeElements.UPDATEOPTION().isDisplayed());
+    const element = ScreenManagerMobile.homeElements.UPDATEOPTION();
+    element.click();
+    driver.pause(1000);
   }
 
 }

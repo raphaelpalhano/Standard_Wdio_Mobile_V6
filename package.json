@@ -7,6 +7,7 @@
     "ios": "wdio ./config/appium/Ios/ios.config.js",
     "androidStackparallel": "wdio ./config/browserstack/android/parallel/browserStack.android.config.parallel.js",
     "androidStack": "wdio ./config/browserstack/android/browserStack.android.config.js",
+    "iosStack": "wdio ./config/browserstack/Ios/browserStack.Ios.config.js",
     "regressivoAndroid": "npm run android wdio -- --cucumberOpts.tagExpression='@regressivoAndroid'",
     "regressivoIos": "npm run ios wdio -- --cucumberOpts.tagExpression='@regressivoIos'",
     "funcionalAndroid": "npm run ios wdio -- --cucumberOpts.tagExpression='@funcional'",

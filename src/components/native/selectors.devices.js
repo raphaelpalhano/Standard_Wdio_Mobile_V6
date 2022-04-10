@@ -26,14 +26,14 @@ module.exports = {
     if(condition){
       return elementsDevice.menuApp;
     }
-    return elementsDevice.menuApp;
+    return elementsDevice.menuAppIos;
   },
 
   moreOptions:(condition) => {
     if(condition){
       return elementsDevice.moreOptions;
     }
-    return elementsDevice.moreOptions;
+    return elementsDevice.moreOptionsIos;
 
   },
 
@@ -41,14 +41,14 @@ module.exports = {
     if(condition){
       return elementsDevice.login;
     }
-    return elementsDevice.login;
+    return elementsDevice.loginIos;
 
   },
   productSearchResult:(condition) => {
     if(condition){
       return elementsDevice.productSearchResult;
     }
-    return elementsDevice.productSearchResult;
+    return elementsDevice.productSearchResultIos;
 
   },
 
@@ -56,7 +56,7 @@ module.exports = {
     if(condition){
       return elementsDevice.productDetails;
     }
-    return elementsDevice.productDetails;
+    return elementsDevice.productDetailsIos;
 
   },
 };

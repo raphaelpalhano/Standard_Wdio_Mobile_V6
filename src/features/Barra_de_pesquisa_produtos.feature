@@ -6,20 +6,20 @@ Feature: Pesquisar produtos pela barra de pesquisa no App Pague Menos
     Given o acesso ao menu Mais
 
 
-  @regressivoAndroid
+  @regressivoAndroid @regressivoIos
   Scenario Outline: Buscando por produto com usuario valido
   Given que efetua login
   When buscar pelo produto "<nome>"
   And acessa os detalhes do produto
-  Then deve exibir o titulo "<referencia>"
+  Then deve exibir o titulo "<nome>"
 
   Examples:
-  |nome                                     |referencia            |
-  |Shampoo Pantene Colageno 175ml           | Referência: 61516    |
+  |nome                                     |
+  |Shampoo Pantene Colageno 175ml           |
 
 
 
-  @regressivoAndroid
+
   Scenario Outline: Buscando por produto com usuario deslogado
   Given que não esteja logado
   When buscar pelo produto "<nome>"
@@ -28,11 +28,11 @@ Feature: Pesquisar produtos pela barra de pesquisa no App Pague Menos
 
   Examples:
   |nome                                     |referencia            |
-  |Suplevit Mulher Com 30 Cápsulas          | Referência: 59280    |
+  |Suplevit Mulher Com 30 Cápsulas          |Referência: 59280    |
 
 
 
-  @regressivoAndroid
+
   Scenario: Buscando por produto que não existe com usuario deslogado
   Given que não esteja logado
   When buscar pelo produto "Maquinazick"

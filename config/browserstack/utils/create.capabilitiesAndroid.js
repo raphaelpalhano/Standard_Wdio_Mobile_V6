@@ -1,4 +1,4 @@
-const createCapabilities = (DeviceInfo) => {
+const createCapabilitiesAndroid = (DeviceInfo) => {
   const listObjects = new Array();
   let device = {};
   for(let count = 0; count < DeviceInfo.deviceName().length; count++){
@@ -8,7 +8,7 @@ const createCapabilities = (DeviceInfo) => {
       name: DeviceInfo.name(),
       device: DeviceInfo.deviceName()[count],
       os_version: DeviceInfo.osVersion()[count],
-      locale: 'BR',
+      locale: `br`,
       language: 'pt',
       app: process.env.BROWSERSTACK_APP_ID || DeviceInfo.appName(),
       'browserstack.local': true,
@@ -19,4 +19,4 @@ const createCapabilities = (DeviceInfo) => {
   return listObjects;
 }
 
-module.exports = createCapabilities;
+module.exports = createCapabilitiesAndroid;

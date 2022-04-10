@@ -1,7 +1,7 @@
 class IosStackInfo {
 
     static project(){
-     return 'First Webdriverio Android Project'
+     return 'Super App Pague menos - Android'
     }
 
     static build(){
@@ -9,15 +9,15 @@ class IosStackInfo {
     }
 
     static deviceName() {
-        return 'iPhone XS'; // pass the udid or devicename
+        return ['iPhone 11']; // pass the udid or devicename
     }
 
     static osVersion() {
-        return '12'; // pass the platform version
+        return ['15']; // pass the platform version
     }
 
     static appName() {
-        return 'bs://27ab507b404cae38095dd35c1d682515398fd24f'; // pass the apk name
+        return 'bs://3e67a172a928e90f4a3a6751ca824b4dbc974d54'; // pass the apk name
     }
 
     static name(){
