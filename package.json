@@ -35,6 +35,7 @@
     "@babel/core": "^7.17.5",
     "@babel/preset-env": "^7.16.11",
     "@babel/register": "^7.17.0",
+    "@browserstack/wdio-browserstack-service": "^1.0.4",
     "@wdio/appium-service": "^6.1.0",
     "@wdio/cli": "^6.1.12",
     "@wdio/cucumber-framework": "^6.1.13",

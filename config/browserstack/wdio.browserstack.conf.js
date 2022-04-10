@@ -9,26 +9,26 @@ exports.config = {
     // ====================
     user: process.env.BROWSERSTACK_USERNAME || 'raphaelangel_mzl52T',
     key: process.env.BROWSERSTACK_ACCESS_KEY || 'YppBqMGQnSsssxKkuJ4R',
-    services: [
-        ['browserstack', {
-            browserstackLocal: true
-        }]
-    ],
 
-    "browserstack.appium_version": "1.17.0",
-    "browserstack.use_w3c": "true",
+    runner: 'local',
+
+    services: [
+      ['@browserstack/wdio-browserstack-service', {
+          browserstackLocal: true
+      }]
+  ],
 
 
     baseUrl: '',
-
+    sync: true,
 
 
     // ==================
     // Specify Test Files
     // ==================
     specs: [
-      './src/features/*.feature'
-  ],
+        './src/features/**/*.feature'
+    ],
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
@@ -80,45 +80,38 @@ exports.config = {
     // Hooks
     // =====
 
-    before: async function() {
-     require('@babel/register');
+    before: function() {
+      require('@babel/register');
       //ScreenManagerMobile.setCelsiusToFahrenheit();
-     ScreenManagerMobile.setHome();
-     ScreenManagerMobile.setHeader();
-     ScreenManagerMobile.setMenu();
-     ScreenManagerMobile.setMoreOptions();
-     ScreenManagerMobile.setLogin();
-     ScreenManagerMobile.setProductSeachResult();
-     ScreenManagerMobile.setProductDetails();
+      ScreenManagerMobile.setHome();
+      ScreenManagerMobile.setHeader();
+      ScreenManagerMobile.setMenu();
+      ScreenManagerMobile.setMoreOptions();
+      ScreenManagerMobile.setLogin();
+      ScreenManagerMobile.setProductSeachResult();
+      ScreenManagerMobile.setProductDetails();
      },
-
-
-     onPrepare: async function() {
-      removeSync('./reports/html')
-      removeSync('./reports/json')
-    },
-
     // Code to start browserstack local before start of test
-    onPrepare: async (config, capabilities) => {
+    onPrepare: (config, capabilities) => {
       console.log("Connecting local");
-      return new Promise( async (resolve, reject) => {
+      return new Promise( (resolve, reject) => {
         exports.bs_local = new browserstack.Local();
-        exports.bs_local.start({'key': exports.config.key }, async (error) => {
-          if (error) return await reject(error);
+        exports.bs_local.start({'key': exports.config.key }, (error) => {
+          if (error) return reject(error);
           console.log('Connected. Now testing...');
-          await resolve();
+          resolve();
         });
       });
     },
 
     // Code to stop browserstack local after end of test
-    onComplete: async (capabilties, specs) => {
+    onComplete: (capabilties, specs) => {
       console.log("Closing local tunnel");
-      return new Promise( async (resolve, reject) => {
-        exports.bs_local.stop( async (error) => {
-          if (error)  return await reject(error);
+      return new Promise( (resolve, reject) => {
+        exports.bs_local.stop( (error) => {
+          if (error) return reject(error);
           console.log("Stopped BrowserStackLocal");
-          await resolve();
+          resolve();
         });
       });
     },
