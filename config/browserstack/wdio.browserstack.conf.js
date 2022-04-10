@@ -116,6 +116,11 @@ exports.config = {
       });
     },
 
+    onPrepare: () => {
+      // Remove the `.tmp/` folder that holds the json and report files
+      removeSync('reports/html');
+      removeSync('reports/json');
+  },
 
     onComplete: function(exitCode, config, capabilities, results) {
         generate({

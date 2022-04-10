@@ -4,7 +4,7 @@ const IosInfo = require('./IosInfo');
 // Appium capabilities
 config.capabilities = [
     {
-        /*'cjson:metadata': {
+        'cjson:metadata': {
             device: 'MacBook Pro 15',
             platform: {
                 name: 'OSX',
@@ -19,7 +19,7 @@ config.capabilities = [
                 name: 'name.of.app.ipa',
                 version: '1.2.3',
             },
-        },*/
+        },
         platformName: 'iOS',
         noReset: true,
         fullReset: false,

@@ -4,6 +4,7 @@ import { After, Before } from 'cucumber';
 import ScreenManagerMobile from '../../../components/native/ScreenManagerMobile';
 import { HomeScreen } from '../../../models/screens/HomeScreen';
 
+
 Before(() => {
   // const index = ScreenManagerMobile.homeElements.LISTLOCATION('0').getText().includes('Permitir') === true ? '0' : '1';
   // HomeScreen.selectAllow(index);

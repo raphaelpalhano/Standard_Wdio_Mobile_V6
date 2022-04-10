@@ -3,6 +3,22 @@ const createCapabilitiesIos = (DeviceInfo) => {
   let device = {};
   for(let count = 0; count < DeviceInfo.deviceName().length; count++){
     device = {
+        'cjson:metadata': {
+          device: DeviceInfo.deviceName()[count],
+          platform: {
+              name: 'Ios',
+              version:  DeviceInfo.osVersion()[count]
+          },
+          browser: {
+              name: 'chrome',
+              version: '100.0',
+          },
+          // for an app
+          app: {
+              name: DeviceInfo.project(),
+              version: '3.18',
+          },
+      },
       project: DeviceInfo.project(),
       build: DeviceInfo.build(),
       name: DeviceInfo.name(),
