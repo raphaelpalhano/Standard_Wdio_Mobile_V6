@@ -10,16 +10,16 @@ export class BaseScreen{
 
   }
 
-  static pause(seconds) {
+  static async pause(seconds) {
     browser.pause(seconds * 1000);
   }
 
-  static waitForElement(element, waitTimeInSeconds) {
-    element.waitForDisplayed(waitTimeInSeconds * 1000);
+  static async waitForElement(element, waitTimeInSeconds) {
+    await element.waitForDisplayed(waitTimeInSeconds * 1000);
   }
 
-  static sleepForElement(element, seconds){
-    element.pause(seconds * 1000);
+  static async sleepForElement(element, seconds){
+    await element.pause(seconds * 1000);
 
   }
 

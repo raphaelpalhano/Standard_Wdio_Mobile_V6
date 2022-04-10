@@ -18,8 +18,8 @@ export class BasePage{
   }
 
 
-  static waitForElement(element, waitTimeInSeconds) {
-    element.waitForDisplayed(waitTimeInSeconds * 1000);
+  static async waitForElement(element, waitTimeInSeconds) {
+    await element.waitForDisplayed(waitTimeInSeconds * 1000);
   }
 
 

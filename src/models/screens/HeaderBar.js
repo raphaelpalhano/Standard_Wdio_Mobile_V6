@@ -6,10 +6,10 @@ const ScreenManagerMobile = require('../../components/native/ScreenManagerMobile
 
 export class HeaderBar extends BaseScreen{
 
-  static searchProduct(nameProduct){
-    ScreenManagerMobile.headerElements.SEARCHBAR().click();
-    ScreenManagerMobile.headerElements.SEARCHINPUT().addValue(nameProduct);
-    ScreenManagerMobile.headerElements.MAGNIFYINGLASS().click();
+  static async searchProduct(nameProduct){
+    await (await ScreenManagerMobile.headerElements.SEARCHBAR()).click();
+    await (await ScreenManagerMobile.headerElements.SEARCHINPUT()).addValue(nameProduct);
+    await (await ScreenManagerMobile.headerElements.MAGNIFYINGLASS()).click();
 
   }
 

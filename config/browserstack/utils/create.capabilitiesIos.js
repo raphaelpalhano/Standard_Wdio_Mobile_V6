@@ -1,4 +1,4 @@
-const createCapabilitiesIos = (DeviceInfo) => {
+const createCapabilitiesIos = async (DeviceInfo) => {
   const listObjects = new Array();
   let device = {};
   for(let count = 0; count < DeviceInfo.deviceName().length; count++){

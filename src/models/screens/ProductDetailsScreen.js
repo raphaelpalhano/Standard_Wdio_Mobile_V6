@@ -6,8 +6,8 @@ const ScreenManagerMobile = require('../../components/native/ScreenManagerMobile
 
 export class ProductDetailsScreen extends BaseScreen{
 
-  static getProductDetails(nameProduct){
-    return ScreenManagerMobile.productDetailsElements.PRODUCT(nameProduct).getText();
+  static async getProductDetails(nameProduct){
+    return (await ScreenManagerMobile.productDetailsElements.PRODUCT(nameProduct)).getText();
   }
 
 

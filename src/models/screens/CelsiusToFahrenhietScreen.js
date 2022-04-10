@@ -5,9 +5,9 @@ const ScreenManagerMobile = require('../../components/native/ScreenManagerMobile
 export class CelsiusToFahrenhietScreen extends BaseScreen {
 
 
-  static dismissAppRatingIfPresent() {
-    if (ScreenManagerMobile.celsiusElements.APPMESSAGE().isDisplayed()) {
-      ScreenManagerMobile.celsiusElements.LATERBUTTON().click();
+  static async dismissAppRatingIfPresent() {
+    if (await (await ScreenManagerMobile.celsiusElements.APPMESSAGE()).isDisplayed()) {
+      await (await ScreenManagerMobile.celsiusElements.LATERBUTTON()).click();
 
     }
   }
@@ -18,17 +18,17 @@ export class CelsiusToFahrenhietScreen extends BaseScreen {
     super.pause(10);
   }
 
-  static enterCelsius(celsiusValue) {
-    this.dismissAppRatingIfPresent();
-    super.waitForElement(ScreenManagerMobile.celsiusElements.TEXTFIELD('C'), 4);
-    ScreenManagerMobile.celsiusElements.TEXTFIELD('C').clearValue();
-    ScreenManagerMobile.celsiusElements.TEXTFIELD('C').addValue( celsiusValue);
-    ScreenManagerMobile.celsiusElements.CONVERTBUTTONCTOF().click();
+  static async enterCelsius(celsiusValue) {
+    await  this.dismissAppRatingIfPresent();
+    await super.waitForElement((await ScreenManagerMobile.celsiusElements.TEXTFIELD('C')), 4);
+    await (await ScreenManagerMobile.celsiusElements.TEXTFIELD('C')).clearValue();
+    await (await ScreenManagerMobile.celsiusElements.TEXTFIELD('C')).addValue( celsiusValue);
+    await (await ScreenManagerMobile.celsiusElements.CONVERTBUTTONCTOF()).click();
   }
 
-  static verifyFahrenheitValue(fahrenheitValue) {
-    super.waitForElement(ScreenManagerMobile.celsiusElements.TEXTFIELD('F'), 4);
-    ScreenManagerMobile.celsiusElements.TEXTFIELD('F').getText().should.equal(fahrenheitValue);
+  static async verifyFahrenheitValue(fahrenheitValue) {
+    super.waitForElement((await ScreenManagerMobile.celsiusElements.TEXTFIELD('F')), 4);
+    await (await ScreenManagerMobile.celsiusElements.TEXTFIELD('F')).getText().should.equal(fahrenheitValue);
 
   }
 }

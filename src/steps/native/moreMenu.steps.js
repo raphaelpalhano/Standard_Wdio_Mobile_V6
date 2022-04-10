@@ -1,26 +1,28 @@
-import { Given} from 'cucumber';
+
+
+import { Given } from 'cucumber';
 import {LoginScreen } from '../../models/screens/LoginScrenn';
 import { MenuBar } from '../../models/screens/MenuBar';
 import { MoreMenuScreen } from '../../models/screens/MoreMenuScreen';
 
 const ScreenManagerMobile = require('../../components/native/ScreenManagerMobile');
 
-Given('que efetua login', () => {
-  if(ScreenManagerMobile.moreElements.ENTERBUTTON().isDisplayed()){
-    MoreMenuScreen.enterButton();
-    LoginScreen.logIn();
-    MenuBar.goToHomeTab();
+Given('que efetua login', async () => {
+  if(await (await ScreenManagerMobile.moreElements.ENTERBUTTON()).isDisplayed()){
+    await MoreMenuScreen.enterButton();
+    await LoginScreen.logIn();
+    await MenuBar.goToHomeTab();
 
   }
-  MenuBar.goToHomeTab();
+  await MenuBar.goToHomeTab();
 
 });
 
-Given('que não esteja logado', () => {
-  if(ScreenManagerMobile.moreElements.EXITBUTTON().isDisplayed()){
-    MoreMenuScreen.exitButton();
+Given('que não esteja logado', async () => {
+  if(await (await ScreenManagerMobile.moreElements.EXITBUTTON()).isDisplayed()){
+    await MoreMenuScreen.exitButton();
 
   }
-  MenuBar.goToHomeTab();
+  await MenuBar.goToHomeTab();
 
 });

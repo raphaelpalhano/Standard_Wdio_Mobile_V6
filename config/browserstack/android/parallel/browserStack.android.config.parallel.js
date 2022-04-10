@@ -5,6 +5,6 @@ const createCapabilities = require('../../utils/create.capabilitiesAndroid');
 
 config.capabilities = createCapabilities(AndroidParallelInfo);
 
-config.cucumberOpts.tagExpression = '@androidApp'; // pass tag to run tests specific to android
+//config.cucumberOpts.tagExpression = '@androidApp'; // pass tag to run tests specific to android
 
 exports.config = config;

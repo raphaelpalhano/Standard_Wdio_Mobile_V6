@@ -6,13 +6,13 @@ const ScreenManagerMobile = require('../../components/native/ScreenManagerMobile
 
 export class ProductSearchResult extends BaseScreen{
 
-  static acessProduct(){
-    ScreenManagerMobile.productsearchResultElements.DETAILS().click();
+  static async acessProduct(){
+    await (await ScreenManagerMobile.productsearchResultElements.DETAILS()).click();
 
   }
 
-  static getTextZeroResult(){
-    return ScreenManagerMobile.productsearchResultElements.ZERORESULTS().getText();
+  static async getTextZeroResult(){
+    return (await ScreenManagerMobile.productsearchResultElements.ZERORESULTS()).getText();
   }
 
 

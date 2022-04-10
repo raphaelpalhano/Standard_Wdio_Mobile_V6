@@ -20,15 +20,15 @@ exports.config = {
 
 
     baseUrl: '',
-    sync: true,
+
 
 
     // ==================
     // Specify Test Files
     // ==================
     specs: [
-        './src/features/*.feature'
-    ],
+      './src/features/*.feature'
+  ],
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
@@ -80,38 +80,45 @@ exports.config = {
     // Hooks
     // =====
 
-    before: function() {
-      require('@babel/register');
+    before: async function() {
+     require('@babel/register');
       //ScreenManagerMobile.setCelsiusToFahrenheit();
-      ScreenManagerMobile.setHome();
-      ScreenManagerMobile.setHeader();
-      ScreenManagerMobile.setMenu();
-      ScreenManagerMobile.setMoreOptions();
-      ScreenManagerMobile.setLogin();
-      ScreenManagerMobile.setProductSeachResult();
-      ScreenManagerMobile.setProductDetails();
+     ScreenManagerMobile.setHome();
+     ScreenManagerMobile.setHeader();
+     ScreenManagerMobile.setMenu();
+     ScreenManagerMobile.setMoreOptions();
+     ScreenManagerMobile.setLogin();
+     ScreenManagerMobile.setProductSeachResult();
+     ScreenManagerMobile.setProductDetails();
      },
+
+
+     onPrepare: async function() {
+      removeSync('./reports/html')
+      removeSync('./reports/json')
+    },
+
     // Code to start browserstack local before start of test
-    onPrepare: (config, capabilities) => {
+    onPrepare: async (config, capabilities) => {
       console.log("Connecting local");
-      return new Promise( (resolve, reject) => {
+      return new Promise( async (resolve, reject) => {
         exports.bs_local = new browserstack.Local();
-        exports.bs_local.start({'key': exports.config.key }, (error) => {
-          if (error) return reject(error);
+        exports.bs_local.start({'key': exports.config.key }, async (error) => {
+          if (error) return await reject(error);
           console.log('Connected. Now testing...');
-          resolve();
+          await resolve();
         });
       });
     },
 
     // Code to stop browserstack local after end of test
-    onComplete: (capabilties, specs) => {
+    onComplete: async (capabilties, specs) => {
       console.log("Closing local tunnel");
-      return new Promise( (resolve, reject) => {
-        exports.bs_local.stop( (error) => {
-          if (error) return reject(error);
+      return new Promise( async (resolve, reject) => {
+        exports.bs_local.stop( async (error) => {
+          if (error)  return await reject(error);
           console.log("Stopped BrowserStackLocal");
-          resolve();
+          await resolve();
         });
       });
     },

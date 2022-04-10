@@ -6,35 +6,35 @@ const ScreenManagerMobile = require('../../components/native/ScreenManagerMobile
 
 export class HomeScreen extends BaseScreen{
 
-  static launchApp() {
+  static async launchApp() {
     super.launchApp();
     super.switchToNativeContext();
   }
 
-  static selectAllow(index){
-    ScreenManagerMobile.homeElements.LISTLOCATION(index).click();
+  static async selectAllow(index){
+    await (await ScreenManagerMobile.homeElements.LISTLOCATION(index)).click();
 
   }
 
-  static selectAllowText(text){
-    if(ScreenManagerMobile.homeElements.LOCATIONOPTIONS(text).isDisplayed()){
-      const element = ScreenManagerMobile.homeElements.LOCATIONOPTIONS(text);
-      element.click();
+  static async selectAllowText(text){
+    if( await (await ScreenManagerMobile.homeElements.LOCATIONOPTIONS(text)).isDisplayed()){
+      const element = (await ScreenManagerMobile.homeElements.LOCATIONOPTIONS(text));
+      (await element.click());
     }
 
   }
 
 
-  static waitHome(time){
-    super.sleepForElement(ScreenManagerMobile.menuElements.HOMETAB(), time);
+  static async waitHome(time){
+    await super.sleepForElement((await ScreenManagerMobile.menuElements.HOMETAB()), time);
   }
 
 
-  static updateLater(){
-    if(ScreenManagerMobile.homeElements.UPDATEOPTION().isDisplayed());
-    const element = ScreenManagerMobile.homeElements.UPDATEOPTION();
-    element.click();
-    driver.pause(1000);
+  static async updateLater(){
+    if(await (await ScreenManagerMobile.homeElements.UPDATEOPTION()).isDisplayed());
+    const element = (await ScreenManagerMobile.homeElements.UPDATEOPTION());
+    (await element.click());
+    (await driver.pause(1000));
   }
 
 }

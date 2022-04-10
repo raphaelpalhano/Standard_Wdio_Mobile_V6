@@ -9,7 +9,7 @@ export class GooglePage extends BasePage{
     super.pause(2);
   }
 
-  static verifyTitle(expectedTitle) {
-    super.getTitle().should.equal(expectedTitle);
+  static async verifyTitle(expectedTitle) {
+    await super.getTitle().should.equal(expectedTitle);
   }
 }

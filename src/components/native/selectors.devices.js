@@ -1,35 +1,35 @@
 const elementsDevice = require('./elements.devices');
 
 module.exports = {
-  celsiusToFahrenheit:(condition) => {
+  celsiusToFahrenheit: async (condition) => {
     if(condition){
       return elementsDevice.celsiusToFahrenheit;
     }
     return elementsDevice.celsiusToFahrenheitIos;
   },
 
-  home:(condition) => {
+  home: async (condition) => {
     if(condition){
       return elementsDevice.homeAndroid;
     }
     return elementsDevice.homeIos;
   },
 
-  header:(condition) => {
+  header: async (condition) => {
     if(condition){
       return elementsDevice.headerAndroid;
     }
     return elementsDevice.headerIos;
   },
 
-  menuApp:(condition) => {
+  menuApp: async (condition) => {
     if(condition){
       return elementsDevice.menuApp;
     }
     return elementsDevice.menuAppIos;
   },
 
-  moreOptions:(condition) => {
+  moreOptions: async (condition) => {
     if(condition){
       return elementsDevice.moreOptions;
     }
@@ -37,14 +37,14 @@ module.exports = {
 
   },
 
-  login:(condition) => {
+  login: async (condition) => {
     if(condition){
       return elementsDevice.login;
     }
     return elementsDevice.loginIos;
 
   },
-  productSearchResult:(condition) => {
+  productSearchResult: async (condition) => {
     if(condition){
       return elementsDevice.productSearchResult;
     }
@@ -52,7 +52,7 @@ module.exports = {
 
   },
 
-  productDetails:(condition) => {
+  productDetails: async (condition) => {
     if(condition){
       return elementsDevice.productDetails;
     }

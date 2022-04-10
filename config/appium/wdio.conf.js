@@ -11,7 +11,7 @@ exports.config = {
     // ====================
 
     runner: 'local',
-    sync: true,
+    sync: false,
 
     // ==================
     // Specify Test Files
@@ -82,7 +82,7 @@ exports.config = {
     // Hooks
     // =====
 
-    before: function() {
+    before: async function() {
       require('@babel/register');
       //ScreenManagerMobile.setCelsiusToFahrenheit();
       ScreenManagerMobile.setHome();
@@ -95,9 +95,13 @@ exports.config = {
 
     },
 
+    onPrepare: async function() {
+      removeSync('./reports/html')
+      removeSync('./reports/json')
+    },
 
 
-    onComplete: function(exitCode, config, capabilities, results) {
+    onComplete: async function(exitCode, config, capabilities, results) {
         generate({
             jsonDir: './reports/json',
             reportPath: './reports/html',

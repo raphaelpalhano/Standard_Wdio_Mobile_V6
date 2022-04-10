@@ -5,12 +5,12 @@ const ScreenManagerMobile = require('../../components/native/ScreenManagerMobile
 
 export class MenuBar extends BaseScreen{
 
-  static goToMoreTab(){
-    ScreenManagerMobile.menuElements.MORETAB().click();
+  static async goToMoreTab(){
+    await (await ScreenManagerMobile.menuElements.MORETAB()).click();
   }
 
-  static goToHomeTab(){
-    ScreenManagerMobile.menuElements.HOMETAB().click();
+  static async goToHomeTab(){
+    await (await ScreenManagerMobile.menuElements.HOMETAB()).click();
   }
 
 

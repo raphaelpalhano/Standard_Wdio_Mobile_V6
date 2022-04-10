@@ -8,10 +8,10 @@ const dataUser = Factory.getUserToLogin('valid');
 
 export class LoginScreen extends BaseScreen{
 
-  static logIn(){
-    ScreenManagerMobile.loginElements.EMAIL().addValue( dataUser.email);
-    ScreenManagerMobile.loginElements.PASSWORD().addValue(dataUser.password);
-    ScreenManagerMobile.loginElements.CONTINUEBUTTON().click();
+  static async logIn(){
+    await (await ScreenManagerMobile.loginElements.EMAIL()).addValue( dataUser.email);
+    await (await ScreenManagerMobile.loginElements.PASSWORD()).addValue(dataUser.password);
+    await (await ScreenManagerMobile.loginElements.CONTINUEBUTTON()).click();
   }
 
 

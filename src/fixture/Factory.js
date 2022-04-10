@@ -2,7 +2,7 @@ import faker from 'faker-br';
 
 export class Factory {
 
-  static getUserToLogin(loginType){
+  static async getUserToLogin(loginType){
     switch (loginType) {
     case 'valid':
       return {
@@ -25,7 +25,7 @@ export class Factory {
     }
   }
 
-  static getUser(type, admin = true){
+  static async getUser(type, admin = true){
     const nomeCompleto = faker.name.findName().split(' ').length ;
     const nomecontroll = nomeCompleto.length > 3 ? nomeCompleto.splice(0,1) : nomeCompleto;
     switch (type) {
