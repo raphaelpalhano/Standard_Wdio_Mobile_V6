@@ -73,7 +73,7 @@ module.exports = {
     SIGNBUTTON:() => $('~btn-cadastrar')
   },
   productSearchResult:{
-    DETAILS:() => $('~btn-detalhes-produto'),
+    DETAILS:() => $('//android.view.ViewGroup[@content-desc="btn-detalhes-produto"]'),
     ACESSDETAILS:(productText) => $(`//android.widget.TextView[@text="${productText}"]`),
     ZERORESULTS: () => $('//android.widget.TextView[@text="0 produtos"]')
   },
