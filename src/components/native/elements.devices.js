@@ -78,7 +78,7 @@ module.exports = {
     ZERORESULTS: () => $('//android.widget.TextView[@text="0 produtos"]')
   },
   productSearchResultIos:{
-    DETAILS:() => $('~btn-detalhes-produto'),
+    DETAILS:() => $('//XCUIElementTypeOther[@name="btn-detalhes-produto"]'),
     ACESSDETAILS:(productText) => $(`//XCUIElementTypeButton[contains(@name, "${productText}")]`),
     ZERORESULTS: () => $('//XCUIElementTypeStaticText[@name="0 produtos"]')
   },
@@ -86,7 +86,7 @@ module.exports = {
     PRODUCT:(text) => $(`//android.widget.TextView[@text="${text}"]`)
   },
   productDetailsIos:{
-    PRODUCT:(text) => $(`//XCUIElementTypeStaticText[@label="${text}"]`)
+    PRODUCT:(text) => $(`//XCUIElementTypeStaticText[contains(@name, "${text}")]`)
   },
 
 };
