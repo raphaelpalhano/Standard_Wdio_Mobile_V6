@@ -30,11 +30,3 @@ Feature: Pesquisar produtos pela barra de pesquisa no App Pague Menos
   |nome                                     |referencia            |
   |Suplevit Mulher Com 30 Cápsulas          |Referência: 59280    |
 
-
-
-
-  Scenario: Buscando por produto que não existe com usuario deslogado
-  Given que não esteja logado
-  When buscar pelo produto "Maquinazick"
-  Then deve exibir o texto "0 produtos"
-

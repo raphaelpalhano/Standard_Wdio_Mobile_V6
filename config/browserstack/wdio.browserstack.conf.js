@@ -7,8 +7,8 @@ exports.config = {
     // ====================
     // Runner Configuration
     // ====================
-    user: process.env.BROWSERSTACK_USERNAME || 'raphaelangel_mzl52T',
-    key: process.env.BROWSERSTACK_ACCESS_KEY || 'YppBqMGQnSsssxKkuJ4R',
+    user: process.env.BROWSERSTACK_USERNAME || 'raphaelangel_4AJ9VN',
+    key: process.env.BROWSERSTACK_ACCESS_KEY || 'MXLt6m2yDyFogVZUsKzn',
     services: [
         ['browserstack', {
             browserstackLocal: true
@@ -115,12 +115,6 @@ exports.config = {
         });
       });
     },
-
-    onPrepare: () => {
-      // Remove the `.tmp/` folder that holds the json and report files
-      removeSync('reports/html');
-      removeSync('reports/json');
-  },
 
     onComplete: function(exitCode, config, capabilities, results) {
         generate({

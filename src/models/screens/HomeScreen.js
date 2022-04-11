@@ -31,10 +31,12 @@ export class HomeScreen extends BaseScreen{
 
 
   static updateLater(){
-    if(ScreenManagerMobile.homeElements.UPDATEOPTION().isDisplayed());
-    const element = ScreenManagerMobile.homeElements.UPDATEOPTION();
-    element.click();
-    driver.pause(1000);
+    if(ScreenManagerMobile.homeElements.UPDATEOPTION().isDisplayed()){
+      const element = ScreenManagerMobile.homeElements.UPDATEOPTION();
+      element.click();
+      driver.pause(1000);
+    }
+
   }
 
 }

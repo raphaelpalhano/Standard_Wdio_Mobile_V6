@@ -1,13 +1,6 @@
 const elementsDevice = require('./elements.devices');
 
 module.exports = {
-  celsiusToFahrenheit:(condition) => {
-    if(condition){
-      return elementsDevice.celsiusToFahrenheit;
-    }
-    return elementsDevice.celsiusToFahrenheitIos;
-  },
-
   home:(condition) => {
     if(condition){
       return elementsDevice.homeAndroid;

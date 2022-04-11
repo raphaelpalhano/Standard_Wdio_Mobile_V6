@@ -6,8 +6,6 @@ import { HomeScreen } from '../../../models/screens/HomeScreen';
 
 
 Before(() => {
-  // const index = ScreenManagerMobile.homeElements.LISTLOCATION('0').getText().includes('Permitir') === true ? '0' : '1';
-  // HomeScreen.selectAllow(index);
   if(driver.isAndroid){
     HomeScreen.updateLater();
     HomeScreen.selectAllowText('Permitir');
@@ -28,7 +26,7 @@ Before(() => {
 
 After(() => {
   HomeScreen.launchApp();
-
+  driver.pause(1500);
 });
 
 

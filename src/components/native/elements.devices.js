@@ -1,19 +1,4 @@
-const selectorsControl =  require('../../utils/componentControl');
-
 module.exports = {
-  celsiusToFahrenheit: {
-    TEXTFIELD:(value) => $(`id:editText${value}`),
-    CONVERTBUTTONCTOF:() => $('id:btncnvCF'),
-    APPMESSAGE:() =>  $('id:message'),
-    LATERBUTTON:() => $('id:button3'),
-  },
-  celsiusToFahrenheitIos:{
-    TEXTFIELD:(value) =>
-      $(`${selectorsControl.ios().predicate}type == 'XCUIElementTypeSwitch' && name CONTAINS '${value}'`),
-    CONVERTBUTTONCTOF:() => $(`${selectorsControl.ios().predicate}type == 'XCUIElementTypeSwitch' && name CONTAINS 'Allow'`),
-    APPMESSAGE:() => $(`${selectorsControl.ios().predicate}type == 'XCUIElementTypeSwitch' && name CONTAINS 'Allow'`),
-    LATERBUTTON:() => $( `${selectorsControl.ios().predicate}type == 'XCUIElementTypeSwitch' && name CONTAINS 'Allow'`),
-  },
   homeAndroid: {
     UPDATEOPTION:() => $( '//android.widget.TextView[@text="Atualizar mais tarde"]'),
     LISTLOCATION:(index) => $(`//android.widget.Button[@index="${index}"]`),
