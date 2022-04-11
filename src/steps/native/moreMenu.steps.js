@@ -1,7 +1,7 @@
 
 
 import { Given } from 'cucumber';
-import {LoginScreen } from '../../models/screens/LoginScrenn';
+import {LoginScreen } from '../../models/screens/LoginScreen';
 import { MenuBar } from '../../models/screens/MenuBar';
 import { MoreMenuScreen } from '../../models/screens/MoreMenuScreen';
 
