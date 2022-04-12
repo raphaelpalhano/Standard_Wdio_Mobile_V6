@@ -1,6 +1,6 @@
 
 // import cucumberJson from 'wdio-cucumberjs-json-reporter';
-import { After, Before } from 'cucumber';
+import {  Before } from 'cucumber';
 import ScreenManagerMobile from '../../../components/native/ScreenManagerMobile';
 import { HomeScreen } from '../../../models/screens/HomeScreen';
 
@@ -9,7 +9,7 @@ Before(() => {
   if(driver.isAndroid){
     HomeScreen.updateLater();
     HomeScreen.selectAllowText('Permitir');
-    HomeScreen.waitHome(4);
+    HomeScreen.waitHome(5);
   }
 
   if(driver.isIOS){
@@ -20,13 +20,6 @@ Before(() => {
     }
   }
 
-
-
-});
-
-After(() => {
-  HomeScreen.launchApp();
-  driver.pause(1500);
 });
 
 

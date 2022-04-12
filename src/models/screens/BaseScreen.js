@@ -6,8 +6,7 @@ export class BaseScreen{
   }
 
   static switchToNativeContext() {
-    browser.switchContext('NATIVE_APP');
-
+    driver.switchContext('NATIVE_APP');
   }
 
   static pause(seconds) {

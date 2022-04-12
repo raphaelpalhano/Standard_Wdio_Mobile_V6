@@ -24,9 +24,9 @@ Feature: Pesquisar produtos pela barra de pesquisa no App Pague Menos
   Given que não esteja logado
   When buscar pelo produto "<nome>"
   And acessa os detalhes do produto
-  Then deve exibir o titulo "<referencia>"
+  Then deve exibir o titulo "<nome>"
 
   Examples:
-  |nome                                     |referencia            |
-  |Suplevit Mulher Com 30 Cápsulas          |Referência: 59280    |
+  |nome                                     |
+  |Suplevit Mulher Com 30 Cápsulas          |
 

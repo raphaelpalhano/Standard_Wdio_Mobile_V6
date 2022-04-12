@@ -1,6 +1,7 @@
 const { generate } = require('multiple-cucumber-html-reporter');
 const browserstack = require('browserstack-local');
-const ScreenManagerMobile = require('../../src/components/native/ScreenManagerMobile')
+const ScreenManagerMobile = require('../../src/components/native/ScreenManagerMobile');
+const AppCapabilities = require('../../src/utils/appCapabilities');
 
 
 exports.config = {
@@ -80,9 +81,25 @@ exports.config = {
     // Hooks
     // =====
 
+    beforeScenario: function (world, context) {
+      const status = driver.queryAppState(AppCapabilities.appId);
+      if(status === 1){
+        driver.launchApp();
+        driver.pause(2000);
+        driver.switchContext('NATIVE_APP');
+
+      }
+
+    },
+
+    afterScenario: function (world, result, context) {
+      driver.terminateApp(AppCapabilities.appId);
+    },
+
     before: function() {
       require('@babel/register');
-      //ScreenManagerMobile.setCelsiusToFahrenheit();
+      AppCapabilities.setAppId('br.com.paguemenos.anjodaguarda',
+      'br.com.paguemenos.anjodaguardaw');
       ScreenManagerMobile.setHome();
       ScreenManagerMobile.setHeader();
       ScreenManagerMobile.setMenu();
