@@ -19,7 +19,7 @@ Feature: Pesquisar produtos pela barra de pesquisa no App Pague Menos
 
 
 
-
+  @regressivoAndroid
   Scenario Outline: Buscando por produto com usuario deslogado
   Given que não esteja logado
   When buscar pelo produto "<nome>"

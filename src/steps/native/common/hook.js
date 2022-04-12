@@ -1,6 +1,6 @@
 
 // import cucumberJson from 'wdio-cucumberjs-json-reporter';
-import { After, Before } from 'cucumber';
+import { Before } from 'cucumber';
 import { HomeScreen } from '../../../models/screens/HomeScreen';
 
 const ScreenManagerMobile = require('../../../components/native/ScreenManagerMobile');
@@ -26,9 +26,5 @@ Before(async () => {
 
 });
 
-After(async ()  => {
-  await HomeScreen.launchApp();
-
-});
 
 
