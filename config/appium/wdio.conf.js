@@ -2,7 +2,7 @@ const { generate } = require('multiple-cucumber-html-reporter');
 const { removeSync } = require('fs-extra');
 
 const ScreenManagerMobile = require('../../src/components/native/ScreenManagerMobile');
-const AppCapabilities = require('../../src/utils/appCapabilities');
+const AppCapabilities = require('../../src/utils/AppCapabilities');
 
 
 exports.config = {
