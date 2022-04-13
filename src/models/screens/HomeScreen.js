@@ -25,6 +25,10 @@ export class HomeScreen extends BaseScreen{
   }
 
 
+  static waitDisplayHome(){
+    ScreenManagerMobile.menuElements.HOMETAB().waitForDisplayed();
+  }
+
   static waitHome(time){
     super.sleepForElement(ScreenManagerMobile.menuElements.HOMETAB(), time);
   }

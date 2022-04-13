@@ -13,9 +13,11 @@ export class BaseScreen{
     browser.pause(seconds * 1000);
   }
 
-  static waitForElement(element, waitTimeInSeconds) {
+  static waitForElementUsingTime(element, waitTimeInSeconds) {
     element.waitForDisplayed(waitTimeInSeconds * 1000);
   }
+
+
 
   static sleepForElement(element, seconds){
     element.pause(seconds * 1000);

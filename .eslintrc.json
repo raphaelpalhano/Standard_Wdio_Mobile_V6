@@ -24,6 +24,7 @@
       "import/no-unresolved": "error",
       "import/prefer-default-export": "off",
       "no-undef": "off",
+      "prefer-const": "off",
       "no-restricted-syntax": ["off", "FunctionExpression", "WithStatement", "BinaryExpression[operator='in']"],
       "no-console": "warn",
       "quotes": [

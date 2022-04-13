@@ -1,4 +1,4 @@
-import faker from 'faker-br';
+const faker = require('faker-br');
 
 export class Factory {
 
@@ -12,8 +12,8 @@ export class Factory {
 
     case 'empty':
       return {
-        email: '',
-        password: ''
+        email: 'pague',
+        password: 'pague'
       };
     case 'invalid':
       return {

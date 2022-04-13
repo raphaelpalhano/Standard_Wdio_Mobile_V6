@@ -80,7 +80,7 @@ exports.config = {
       const status = driver.queryAppState(AppCapabilities.appId);
       if(status === 1){
         driver.launchApp();
-        driver.pause(1800);
+        ScreenManagerMobile.homeElements.UPDATEOPTION().waitForDisplayed();
         driver.switchContext('NATIVE_APP');
 
       }

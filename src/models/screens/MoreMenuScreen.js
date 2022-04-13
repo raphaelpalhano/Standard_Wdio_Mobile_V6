@@ -8,7 +8,7 @@ export class MoreMenuScreen extends BaseScreen{
 
   static goToLogin(){
     ScreenManagerMobile.moreElements.ENTERBUTTON().click();
-    super.sleepForElement(ScreenManagerMobile.loginElements.EMAIL(), 2);
+    ScreenManagerMobile.loginElements.EMAIL().waitForDisplayed();
   }
 
   static enterButton(){
@@ -19,4 +19,8 @@ export class MoreMenuScreen extends BaseScreen{
     ScreenManagerMobile.moreElements.EXITBUTTON().click();
   }
 
+
+  static getTextAlert(mensagem){
+    return ScreenManagerMobile.moreElements.ALERTMESSAGE(mensagem).getText();
+  }
 }

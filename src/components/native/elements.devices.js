@@ -39,10 +39,12 @@ module.exports = {
   moreOptions:{
     ENTERBUTTON:() => $( '//android.widget.TextView[@text="Entrar"]'),
     EXITBUTTON:() => $( '//android.widget.TextView[@text="Sair"]'),
+    ALERTMESSAGE:(mensagem) => $(`//android.widget.TextView[@text="${mensagem}"]`)
   },
   moreOptionsIos:{
     ENTERBUTTON:() =>  $(`~btn-entrar`),
     EXITBUTTON:() => $( `~btn-sair`),
+    ALERTMESSAGE:(mensagem) => $(`//android.widget.TextView[@text="${mensagem}"]`)
   },
 
   login:{
