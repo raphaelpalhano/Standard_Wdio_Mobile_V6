@@ -1,12 +1,13 @@
-const createCapabilitiesIos = (DeviceInfo) => {
+const createCapabilitiesAndroid = (DeviceInfo) => {
   const listObjects = new Array();
   let device = {};
   for(let count = 0; count < DeviceInfo.deviceName().length; count++){
+
     device = {
         'cjson:metadata': {
           device: DeviceInfo.deviceName()[count],
           platform: {
-              name: 'Ios',
+              name: 'Android',
               version:  DeviceInfo.osVersion()[count]
           },
           browser: {
@@ -16,7 +17,7 @@ const createCapabilitiesIos = (DeviceInfo) => {
           // for an app
           app: {
               name: DeviceInfo.project(),
-              version: '3.18',
+              version: '2.2.69',
           },
       },
       project: DeviceInfo.project(),
@@ -24,7 +25,7 @@ const createCapabilitiesIos = (DeviceInfo) => {
       name: DeviceInfo.name(),
       device: DeviceInfo.deviceName()[count],
       os_version: DeviceInfo.osVersion()[count],
-      locale: `br_CA`,
+      locale: `br`,
       language: 'pt',
       app: process.env.BROWSERSTACK_APP_ID || DeviceInfo.appName(),
       'browserstack.local': true,
@@ -35,4 +36,4 @@ const createCapabilitiesIos = (DeviceInfo) => {
   return listObjects;
 }
 
-module.exports = createCapabilitiesIos;
+module.exports = createCapabilitiesAndroid;

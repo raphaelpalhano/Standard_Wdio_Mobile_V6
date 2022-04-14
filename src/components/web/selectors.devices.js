@@ -1,26 +1,55 @@
-const selectorsControl =  require('../../utils/componentControl');
+const elementsDevice = require('./elements.web');
 
 module.exports = {
-  celsiusToFahrenheit:(condition) => {
+  home:(condition) => {
     if(condition){
-      return {
-        TEXTFIELDCELSIUS: $('id:editTextC'),
-        TEXTFIELDFAHRENHEIT: $('id:editTextF'),
-        CONVERTBUTTONCTOF: $('id:btncnvCF'),
-        APPMESSAGE: $('id:message'),
-        LATERBUTTON: $('id:button3'),
-      };
+      return elementsDevice.homeAndroid;
     }
-    return {
-      TEXTFIELDCELSIUS: $(`${selectorsControl.ios().predicate}type == 'XCUIElementTypeSwitch' && name CONTAINS 'Allow'`),
-      CONVERTBUTTONCTOF: $(`${selectorsControl.ios().predicate}type == 'XCUIElementTypeSwitch' && name CONTAINS 'Allow'`),
-      APPMESSAGE:  $(`${selectorsControl.ios().predicate}type == 'XCUIElementTypeSwitch' && name CONTAINS 'Allow'`),
-      LATERBUTTON: $(`${selectorsControl.ios().predicate}type == 'XCUIElementTypeSwitch' && name CONTAINS 'Allow'`)
-    };
+    return elementsDevice.homeIos;
   },
 
+  header:(condition) => {
+    if(condition){
+      return elementsDevice.headerAndroid;
+    }
+    return elementsDevice.headerIos;
+  },
 
+  menuApp:(condition) => {
+    if(condition){
+      return elementsDevice.menuApp;
+    }
+    return elementsDevice.menuAppIos;
+  },
 
+  moreOptions:(condition) => {
+    if(condition){
+      return elementsDevice.moreOptions;
+    }
+    return elementsDevice.moreOptionsIos;
+
+  },
+
+  login:(condition) => {
+    if(condition){
+      return elementsDevice.login;
+    }
+    return elementsDevice.loginIos;
+
+  },
+  productSearchResult:(condition) => {
+    if(condition){
+      return elementsDevice.productSearchResult;
+    }
+    return elementsDevice.productSearchResultIos;
+
+  },
+
+  productDetails:(condition) => {
+    if(condition){
+      return elementsDevice.productDetails;
+    }
+    return elementsDevice.productDetailsIos;
+
+  },
 };
-
-

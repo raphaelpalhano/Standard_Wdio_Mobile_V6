@@ -26,7 +26,7 @@ export class HomeScreen extends BaseScreen{
 
 
   static waitDisplayHome(){
-    ScreenManagerMobile.menuElements.HOMETAB().waitForDisplayed();
+    return ScreenManagerMobile.menuElements.HOMETAB().waitForExist();
   }
 
   static waitHome(time){
@@ -35,7 +35,7 @@ export class HomeScreen extends BaseScreen{
 
 
   static updateLater(){
-    if(ScreenManagerMobile.homeElements.UPDATEOPTION().isDisplayed()){
+    if(ScreenManagerMobile.homeElements.UPDATEOPTION().waitForDisplayed()){
       const element = ScreenManagerMobile.homeElements.UPDATEOPTION();
       element.click();
       driver.pause(1000);

@@ -45,7 +45,7 @@ module.exports = {
   },
   moreOptionsIos:{
     ENTERBUTTON:() =>  $(`~btn-entrar`),
-    EXITBUTTON:() => $(`~btn-sair`),
+    EXITBUTTON:() => $( `~btn-sair`),
     ALERTMESSAGE:(mensagem) => $( `${patternControl.ios().predicate}type == 'XCUIElementTypeStaticText' && name CONTAINS '${mensagem}'`),
   },
 

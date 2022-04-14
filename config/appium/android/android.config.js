@@ -18,7 +18,7 @@ config.capabilities = [
         // for an app
         app: {
             name: 'Super app Pague menos',
-            version: '3.18',
+            version: '2.2.69',
         },
     },
     platformName: 'Android',
@@ -30,9 +30,8 @@ config.capabilities = [
     platformVersion: AndroidInfo.platFormVersion(),
     locale: AndroidInfo.locale(),
     language: AndroidInfo.language(),
-    //autoGrantPermissions: true,
-    //autoAcceptAlerts: true,
-    //autoAcceptAlerts: 'true',
+    autoGrantPermission: true,
+    //isHeadless: true,
     app: path.resolve(`./apps/${AndroidInfo.appName()}`)
     }
 ];

@@ -1,7 +1,7 @@
 const { generate } = require('multiple-cucumber-html-reporter');
 const browserstack = require('browserstack-local');
 const ScreenManagerMobile = require('../../src/components/native/ScreenManagerMobile');
-const AppCapabilities = require('../../src/utils/AppCapabilities');
+const AppCapabilities = require('../utils/AppCapabilities');
 
 
 
@@ -86,7 +86,6 @@ exports.config = {
       const status = driver.queryAppState(AppCapabilities.appId);
       if(status === 1){
         driver.launchApp();
-        driver.pause(2000);
         driver.switchContext('NATIVE_APP');
 
       }

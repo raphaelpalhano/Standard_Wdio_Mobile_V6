@@ -11,12 +11,19 @@ export class MoreMenuScreen extends BaseScreen{
     ScreenManagerMobile.loginElements.EMAIL().waitForDisplayed();
   }
 
+  static sleepforEnter(time){
+    super.sleepForElement(ScreenManagerMobile.moreElements.ENTERBUTTON(), time);
+  }
+
   static enterButton(){
     ScreenManagerMobile.moreElements.ENTERBUTTON().click();
   }
 
   static exitButton(){
-    ScreenManagerMobile.moreElements.EXITBUTTON().click();
+    if(ScreenManagerMobile.moreElements.EXITBUTTON().waitForDisplayed()){
+      ScreenManagerMobile.moreElements.EXITBUTTON().click();
+    }
+
   }
 
 

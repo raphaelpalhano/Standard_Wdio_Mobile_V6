@@ -2,8 +2,7 @@ const { generate } = require('multiple-cucumber-html-reporter');
 const { removeSync } = require('fs-extra');
 
 const ScreenManagerMobile = require('../../src/components/native/ScreenManagerMobile');
-const AppCapabilities = require('../../src/utils/AppCapabilities');
-
+const AppCapabilities = require('../utils/AppCapabilities');
 
 exports.config = {
     // ====================
@@ -34,6 +33,8 @@ exports.config = {
     //
     // Default request retries count
     connectionRetryCount: 3,
+
+
 
     appium: { command: 'appium' },
     port: 4723,
@@ -69,6 +70,7 @@ exports.config = {
             'cucumberjs-json', {
                 jsonFolder: './reports/json',
                 language: 'en',
+
             }
         ]
     ],
@@ -80,7 +82,6 @@ exports.config = {
       const status = driver.queryAppState(AppCapabilities.appId);
       if(status === 1){
         driver.launchApp();
-        ScreenManagerMobile.homeElements.UPDATEOPTION().waitForDisplayed();
         driver.switchContext('NATIVE_APP');
 
       }
@@ -94,7 +95,7 @@ exports.config = {
 
     before: function(capabilities, specs, browser) {
       require('@babel/register');
-      AppCapabilities.setAppId('br.com.paguemenos.anjodaguarda',
+     AppCapabilities.setAppId('br.com.paguemenos.anjodaguarda',
       'br.com.paguemenos.anjodaguardaw');
       //ScreenManagerMobile.setCelsiusToFahrenheit();
       ScreenManagerMobile.setHome();

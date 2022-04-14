@@ -9,7 +9,7 @@ Given('que acessa a tela de login', () => {
   const element = ScreenManagerMobile.moreElements.ENTERBUTTON().isDisplayed();
   if(!element){
     MoreMenuScreen.exitButton();
-    MenuBar.sleepForMoreTabDisplay(2);
+    MenuBar.sleepForMoreTabDisplay(4);
     MenuBar.goToMoreTab();
     MoreMenuScreen.enterButton();
   }
