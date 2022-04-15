@@ -1,6 +1,4 @@
-
-
-import { Given } from 'cucumber';
+import { Given } from '@wdio/cucumber-framework';
 import {LoginScreen } from '../../models/screens/LoginScreen';
 import { MenuBar } from '../../models/screens/MenuBar';
 import { MoreMenuScreen } from '../../models/screens/MoreMenuScreen';

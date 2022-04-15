@@ -1,6 +1,8 @@
 
-import { Then, When } from 'cucumber';
+
+import { Then, When } from '@wdio/cucumber-framework';
 import {CelsiusToFahrenhietScreen} from '../../models/screens/CelsiusToFahrenhietScreen';
+
 
 
 When(/^I enter celsius of (.*)$/, async (celsius) => {

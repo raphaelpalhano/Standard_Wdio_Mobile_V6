@@ -1,5 +1,4 @@
-
-import { Given, Then } from 'cucumber';
+import { Given, Then } from '@wdio/cucumber-framework';
 import {GooglePage} from '../../models/pages/GooglePage';
 
 

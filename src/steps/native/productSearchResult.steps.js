@@ -1,5 +1,6 @@
+import { Then, When } from '@wdio/cucumber-framework';
 import { expect } from 'chai';
-import { Then, When } from 'cucumber';
+
 
 import {ProductSearchResult } from '../../models/screens/ProductSearchResult';
 

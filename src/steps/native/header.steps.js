@@ -1,4 +1,5 @@
-import { When } from 'cucumber';
+
+import { When } from '@wdio/cucumber-framework';
 import {HeaderBar } from '../../models/screens/HeaderBar';
 
 When('buscar pelo produto {string}', async (nomeProduto) => {
