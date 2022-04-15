@@ -20,7 +20,7 @@ exports.config = {
 
 
     baseUrl: '',
-    sync: true,
+
 
 
     // ==================
@@ -82,6 +82,7 @@ exports.config = {
 
     before: function() {
       require('@babel/register');
+      require('@wdio/cucumber-framework');
       //ScreenManagerMobile.setCelsiusToFahrenheit();
       ScreenManagerMobile.setHome();
       ScreenManagerMobile.setHeader();

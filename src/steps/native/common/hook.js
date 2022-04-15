@@ -1,6 +1,7 @@
 
 // import cucumberJson from 'wdio-cucumberjs-json-reporter';
-import { Before } from 'cucumber';
+
+import { Before } from '@wdio/cucumber-framework';
 import { HomeScreen } from '../../../models/screens/HomeScreen';
 
 const ScreenManagerMobile = require('../../../components/native/ScreenManagerMobile');

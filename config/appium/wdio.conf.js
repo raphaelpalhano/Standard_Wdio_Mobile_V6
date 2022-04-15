@@ -12,7 +12,7 @@ exports.config = {
     // ====================
 
     runner: 'local',
-    sync: false,
+
 
     // ==================
     // Specify Test Files
@@ -87,7 +87,6 @@ exports.config = {
       const status = driver.queryAppState(AppCapabilities.appId);
       if(status === 1){
         driver.launchApp();
-        driver.pause(1800);
         driver.switchContext('NATIVE_APP');
 
       }
