@@ -64,16 +64,11 @@ exports.config = {
         retry: 0
     },
 
-    reporters: [
-
-        [
-            'cucumberjs-json', {
+    reporters: ['spec',['cucumberjs-json', {
                 jsonFolder: './reports/json',
                 language: 'en',
-
-            }
-        ]
-    ],
+              }
+          ]],
     // =====
     // Hooks
     // =====
