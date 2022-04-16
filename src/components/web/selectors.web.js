@@ -1,21 +1,15 @@
-const elementsDevice = require('./elements.devices');
+const elementsWeb = require('./elements.web');
 
 module.exports = {
-  home:(condition) => {
-    if(condition){
-      return elementsDevice.homeAndroid;
-    }
-    return elementsDevice.homeIos;
+  home:() => {
+    return elementsWeb.homeAndroid;
   },
 
-  header:(condition) => {
-    if(condition){
-      return elementsDevice.headerAndroid;
-    }
-    return elementsDevice.headerIos;
+  header:() => {
+    return elementsWeb.homeAndroid;
   },
 
-  menuApp:(condition) => {
+  menuApp:() => {
     if(condition){
       return elementsDevice.menuApp;
     }

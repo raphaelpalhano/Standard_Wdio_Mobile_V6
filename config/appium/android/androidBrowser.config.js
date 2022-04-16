@@ -13,6 +13,6 @@ config.capabilities = [
     }
 ];
 
-config.cucumberOpts.tagExpression = '@androidBrowser'; // pass tag to run tests specific to android
+//config.cucumberOpts.tagExpression = '@androidBrowser'; // pass tag to run tests specific to android
 
 exports.config = config;

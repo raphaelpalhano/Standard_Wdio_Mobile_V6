@@ -198,3 +198,31 @@ const selector = '**/XCUIElementTypeCell[`name BEGINSWITH "D"`]/**/XCUIElementTy
 const button = await $(`-ios class chain:${selector}`)
 
 ~~~
+
+
+# WDIO-V6
+
+## INSTALL
+`npm i @wdio/appium-service@6.12.1 @wdio/cli@6.12.1 @wdio/cli@6.12.1 @wdio/local-runner@6.12.1 @wdio/spec-reporter@6.11.0 wdio-chromedriver-service@6.0.4 @wdio/cucumber-framework@6.11.1 @wdio/mocha-framework@6.11.0 --save-dev`
+
+`npm i wdio-cucumberjs-json-reporter@2.0.4 cucumber`
+
+
+## UNINSTALL
+`npm uninstall @wdio/appium-service @wdio/cli @wdio/cli @wdio/local-runner @wdio/spec-reporter wdio-chromedriver-service @wdio/cucumber-framework @wdio/mocha-framework wdio-cucumberjs-json-reporter cucumber`
+
+
+
+# V7 -
+
+## INSTALL
+`npm i @wdio/appium-service@7.16.14 @wdio/cli@7.16.14 @wdio/local-runner@7.16.14 @wdio/spec-reporter@7.16.14 wdio-chromedriver-service@7.2.6 @wdio/cucumber-framework@7.16.14 @wdio/mocha-framework@7.16.14 --save-dev`
+
+
+`npm i @cucumber/cucumber@7.3.2 wdio-cucumberjs-json-reporter@4.4.1`
+
+
+# UNINSTALL
+`npm uninstall @wdio/appium-service @wdio/cli @wdio/local-runner @wdio/spec-reporter wdio-chromedriver-service @wdio/cucumber-framework @wdio/mocha-framework @cucumber/cucumber wdio-cucumberjs-json-reporter`
+
+

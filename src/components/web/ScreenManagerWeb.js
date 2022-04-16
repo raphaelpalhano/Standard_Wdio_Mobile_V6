@@ -1,4 +1,4 @@
-const selectorDevices = require('./selectors.devices');
+const selectorDevices = require('./selectors.web');
 
 
 module.exports = class ScreenManagerWeb{

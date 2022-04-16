@@ -20,17 +20,16 @@ config.capabilities = [
                 version: '1.2.3',
             },
         },*/
-        platformName: 'iOS',
         noReset: true,
         fullReset: false,
         maxInstances: 1,
         automationName: 'XCUITest',
         deviceName: IosInfo.deviceName(),
         platformVersion: IosInfo.platFormVersion(),
-        locale: IosInfo.locale(),
-        language: IosInfo.language(),
         app: IosInfo.appName() // use - path.resolve(`./apps/${IosInfo.appName()}`) if passing a custom app
     }
+
+
 ];
 
 //config.cucumberOpts.tagExpression = '@iosApp';// pass tag to run tests specific to ios

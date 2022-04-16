@@ -31,7 +31,7 @@ export class HomeScreen extends BaseScreen{
 
 
   static async updateLater(){
-    if(await (await ScreenManagerMobile.homeElements.UPDATEOPTION()).isDisplayed());
+    if(await (await ScreenManagerMobile.homeElements.UPDATEOPTION()).waitForDisplayed());
     const element = (await ScreenManagerMobile.homeElements.UPDATEOPTION());
     (await element.click());
     (await driver.pause(1000));

@@ -3,11 +3,6 @@ const selectorDevices = require('./selectors.devices');
 
 module.exports = class ScreenManagerMobile{
 
-
-  static async setCelsiusToFahrenheit(){
-    this.celsiusElements = await selectorDevices.celsiusToFahrenheit(driver.isAndroid);
-  }
-
   static async setHome(){
     this.homeElements = await selectorDevices.home(driver.isAndroid);
   }

@@ -1,4 +1,4 @@
-const createCapabilitiesIos = require('../utils/create.capabilitiesIos');
+const createCapabilitiesIos = require('../../utils/create.capabilitiesIos');
 const {config} = require('../wdio.browserstack.conf');
 const IosStackInfo = require('./IosStackInfo');
 

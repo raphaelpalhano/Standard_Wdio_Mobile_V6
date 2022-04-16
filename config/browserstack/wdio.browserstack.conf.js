@@ -1,6 +1,10 @@
 const { generate } = require('multiple-cucumber-html-reporter');
 const browserstack = require('browserstack-local');
-const ScreenManagerMobile = require('../../src/components/native/ScreenManagerMobile')
+const ScreenManagerMobile = require('../../src/components/native/ScreenManagerMobile');
+const AppCapabilities = require('../utils/AppCapabilities');
+const AndroidInfo = require('../appium/android/AndroidInfo');
+const AndroidStackInfo = require('./android/AndroidStackInfo');
+const IosStackInfo = require('./Ios/IosStackInfo');
 
 
 exports.config = {
@@ -9,8 +13,6 @@ exports.config = {
     // ====================
     user: process.env.BROWSERSTACK_USERNAME || 'raphaelangel_mzl52T',
     key: process.env.BROWSERSTACK_ACCESS_KEY || 'YppBqMGQnSsssxKkuJ4R',
-
-    runner: 'local',
 
     services: [
       ['@browserstack/wdio-browserstack-service', {
@@ -80,17 +82,32 @@ exports.config = {
     // Hooks
     // =====
 
-    before: function() {
+    beforeScenario: async function (world, context) {
+      const status = await driver.queryAppState(AppCapabilities.appId);
+      if(status === 1){
+        await driver.launchApp();
+        await driver.switchContext('NATIVE_APP');
+
+      }
+
+    },
+
+    afterScenario: async function (world, result, context) {
+      await driver.terminateApp(AppCapabilities.appId);
+    },
+
+
+    before: async function() {
       require('@babel/register');
-      require('@wdio/cucumber-framework');
-      //ScreenManagerMobile.setCelsiusToFahrenheit();
-      ScreenManagerMobile.setHome();
-      ScreenManagerMobile.setHeader();
-      ScreenManagerMobile.setMenu();
-      ScreenManagerMobile.setMoreOptions();
-      ScreenManagerMobile.setLogin();
-      ScreenManagerMobile.setProductSeachResult();
-      ScreenManagerMobile.setProductDetails();
+      await AppCapabilities.setAppId('br.com.paguemenos.anjodaguarda',
+      'br.com.paguemenos.anjodaguardaw');
+      await ScreenManagerMobile.setHome();
+      await ScreenManagerMobile.setHeader();
+      await ScreenManagerMobile.setMenu();
+      await ScreenManagerMobile.setMoreOptions();
+      await ScreenManagerMobile.setLogin();
+      await ScreenManagerMobile.setProductSeachResult();
+      await ScreenManagerMobile.setProductDetails();
      },
     // Code to start browserstack local before start of test
     onPrepare: (config, capabilities) => {
@@ -122,8 +139,6 @@ exports.config = {
         generate({
             jsonDir: './reports/json',
             reportPath: './reports/html',
-            openReportInBrowser: true,
-
         });
     },
 

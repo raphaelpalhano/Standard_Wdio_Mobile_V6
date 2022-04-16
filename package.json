@@ -10,9 +10,12 @@
     "iosStack": "wdio ./config/browserstack/Ios/browserStack.Ios.config.js",
     "regressivoAndroid": "npm run android wdio -- --cucumberOpts.tagExpression='@regressivoAndroid'",
     "regressivoIos": "npm run ios wdio -- --cucumberOpts.tagExpression='@regressivoIos'",
-    "funcionalAndroid": "npm run ios wdio -- --cucumberOpts.tagExpression='@funcional'",
+    "funcionalAndroid": "npm run android wdio -- --cucumberOpts.tagExpression='@funcionalAndroid'",
+    "funcionalIos": "npm run ios wdio -- --cucumberOpts.tagExpression='@funcionalIos'",
     "androidRegressivoStack": "npm run androidStack -- --cucumberOpts.tagExpression='@regressivoAndroid'",
     "iosRegressivoStack": "npm run iosStack -- --cucumberOpts.tagExpression='@regressivoIos'",
+    "androidFuncionalStack": "npm run androidStack -- --cucumberOpts.tagExpression='@funcionalAndroid'",
+    "iosFuncionalStack": "npm run iosStack -- --cucumberOpts.tagExpression='@funcionalIos'",
     "androidBrowser": "wdio ./config/appium/android/androidBrowser.config.js",
     "iosBrowser": "wdio ./config/appium/Ios/iosBrowser.config.js",
     "lint": "eslint --fix --ext .js,.jsx .",
@@ -36,10 +39,12 @@
     "@babel/preset-env": "^7.16.11",
     "@babel/register": "^7.17.0",
     "@browserstack/wdio-browserstack-service": "^1.0.4",
-    "@wdio/appium-service": "^7.19.5",
-    "@wdio/cli": "^7.19.5",
-    "@wdio/local-runner": "^7.19.5",
-    "@wdio/spec-reporter": "^7.19.5",
+    "@wdio/appium-service": "^6.12.1",
+    "@wdio/cli": "^6.12.1",
+    "@wdio/cucumber-framework": "^6.11.1",
+    "@wdio/local-runner": "^6.12.1",
+    "@wdio/mocha-framework": "^6.11.0",
+    "@wdio/spec-reporter": "^6.11.0",
     "babel-eslint": "^10.1.0",
     "browserstack-local": "^1.4.9",
     "chromedriver": "^100.0.0",
@@ -50,14 +55,14 @@
     "eslint-plugin-import": "^2.25.4",
     "husky": "^4.3.1",
     "prettier": "^1.19.1",
-    "wdio-chromedriver-service": "^7.3.2"
+    "wdio-chromedriver-service": "^6.0.4"
   },
   "dependencies": {
-    "@wdio/cucumber-framework": "^7.19.5",
     "chai": "^4.3.6",
+    "cucumber": "^7.0.0-rc.0",
     "faker-br": "^0.4.1",
     "fs-extra": "^9.1.0",
     "multiple-cucumber-html-reporter": "^1.19.0",
-    "wdio-cucumberjs-json-reporter": "^4.4.1"
+    "wdio-cucumberjs-json-reporter": "^2.0.4"
   }
 }

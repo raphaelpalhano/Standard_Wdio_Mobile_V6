@@ -1,6 +1,6 @@
 const {config} = require('../wdio.browserstack.conf');
 const AndroidStackInfo = require('./AndroidStackInfo');
-const createCapabilitiesAndroid = require('../utils/create.capabilitiesAndroid');
+const createCapabilitiesAndroid = require('../../utils/create.capabilitiesAndroid');
 
 // Appium capabilities
 config.capabilities = createCapabilitiesAndroid(AndroidStackInfo);

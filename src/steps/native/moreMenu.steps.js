@@ -1,26 +1,27 @@
-import { Given } from '@wdio/cucumber-framework';
-import {LoginScreen } from '../../models/screens/LoginScreen';
+import { expect } from 'chai';
+import { Given, Then } from 'cucumber';
 import { MenuBar } from '../../models/screens/MenuBar';
 import { MoreMenuScreen } from '../../models/screens/MoreMenuScreen';
 
 const ScreenManagerMobile = require('../../components/native/ScreenManagerMobile');
 
-Given('que efetua login', async () => {
-  if(await (await ScreenManagerMobile.moreElements.ENTERBUTTON()).isDisplayed()){
+Given('que acessa a tela de login', async () => {
+  const element = await (await ScreenManagerMobile.moreElements.ENTERBUTTON()).isDisplayed();
+  if(!element){
+    await MoreMenuScreen.exitButton();
+    await MenuBar.sleepForMoreTabDisplay(4);
+    await MenuBar.goToMoreTab();
     await MoreMenuScreen.enterButton();
-    await LoginScreen.logIn();
-    await MenuBar.goToHomeTab();
-
   }
-  await MenuBar.goToHomeTab();
+  if(element){
+    await MoreMenuScreen.enterButton();
+  }
+
 
 });
 
-Given('que não esteja logado', async () => {
-  if(await (await ScreenManagerMobile.moreElements.EXITBUTTON()).isDisplayed()){
-    await MoreMenuScreen.exitButton();
 
-  }
-  await MenuBar.goToHomeTab();
-
+Then(`deve exibir a mensagem {string}`, async (message) => {
+  const result = await MoreMenuScreen.getTextAlert(message);
+  expect(result).to.be.eq(message);
 });
