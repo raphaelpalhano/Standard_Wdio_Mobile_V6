@@ -3,14 +3,14 @@ const IosInfo = require('./IosInfo');
 
 // Appium capabilities
 config.capabilities = [
-    {
-        platformName: 'iOS',
-        browserName: 'safari',
-        maxInstances: 1,
-        automationName: 'XCUITest',
-        deviceName: IosInfo.deviceName(),
-        platformVersion: IosInfo.platFormVersion()
-    }
+  {
+    platformName: 'iOS',
+    browserName: 'safari',
+    maxInstances: 1,
+    automationName: 'XCUITest',
+    deviceName: IosInfo.deviceName(),
+    platformVersion: IosInfo.platFormVersion()
+  }
 ];
 
 config.cucumberOpts.tagExpression = '@iosBrowser';// pass tag to run tests specific to ios

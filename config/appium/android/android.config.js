@@ -4,22 +4,22 @@ const AndroidInfo = require('./AndroidInfo');
 
 // Appium capabilities
 config.capabilities = [
-    {
-      'cjson:metadata': {
-        device: AndroidInfo.deviceName(),
-        platform: {
-            name: 'Android',
-            version: AndroidInfo.platFormVersion()
-        },
-        browser: {
-            name: 'chrome',
-            version: '100.0',
-        },
-        // for an app
-        app: {
-            name: 'Super app Pague menos',
-            version: '2.2.69',
-        },
+  {
+    'cjson:metadata': {
+      device: AndroidInfo.deviceName(),
+      platform: {
+        name: 'Android',
+        version: AndroidInfo.platFormVersion()
+      },
+      browser: {
+        name: 'chrome',
+        version: '100.0',
+      },
+      // for an app
+      app: {
+        name: 'Super app Pague menos',
+        version: '2.2.69',
+      },
     },
     platformName: 'Android',
     noReset: true,
@@ -30,10 +30,10 @@ config.capabilities = [
     platformVersion: AndroidInfo.platFormVersion(),
     autoGrantPermission: true,
     app: path.resolve(`./apps/${AndroidInfo.appName()}`)
-    }
+  }
 ];
 
-//config.cucumberOpts.tagExpression = '@androidApp'; // pass tag to run tests specific to android
+// config.cucumberOpts.tagExpression = '@androidApp'; // pass tag to run tests specific to android
 
 exports.config = config;
 

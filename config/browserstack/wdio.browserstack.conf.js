@@ -105,7 +105,7 @@ exports.config = {
       await ScreenManagerMobile.setLogin();
       await ScreenManagerMobile.setProductSeachResult();
       await ScreenManagerMobile.setProductDetails();
-     },
+    },
     // Code to start browserstack local before start of test
     onPrepare: (config, capabilities) => {
       console.log("Connecting local");
