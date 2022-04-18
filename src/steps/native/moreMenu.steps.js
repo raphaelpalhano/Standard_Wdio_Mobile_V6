@@ -9,7 +9,7 @@ Given('que acessa a tela de login', async () => {
   const element = await (await ScreenManagerMobile.moreElements.ENTERBUTTON()).isDisplayed();
   if(!element){
     await MoreMenuScreen.exitButton();
-    await MenuBar.sleepForMoreTabDisplay(4);
+    await MenuBar.sleepForMoreTabDisplay(4.40);
     await MenuBar.goToMoreTab();
     await MoreMenuScreen.enterButton();
   }
