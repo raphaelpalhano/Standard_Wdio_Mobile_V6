@@ -2,9 +2,6 @@ const { generate } = require('multiple-cucumber-html-reporter');
 const browserstack = require('browserstack-local');
 const ScreenManagerMobile = require('../../src/components/native/ScreenManagerMobile');
 const AppCapabilities = require('../utils/AppCapabilities');
-const AndroidInfo = require('../appium/android/AndroidInfo');
-const AndroidStackInfo = require('./android/AndroidStackInfo');
-const IosStackInfo = require('./Ios/IosStackInfo');
 
 
 exports.config = {
