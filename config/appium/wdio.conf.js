@@ -1,6 +1,6 @@
 const { generate } = require('multiple-cucumber-html-reporter');
-const { removeSync } = require('fs-extra');
-
+const { removeSync, readdir, unlink} = require('fs-extra');
+const path = require('path');
 const ScreenManagerMobile = require('../../src/components/native/ScreenManagerMobile');
 const AppCapabilities = require('../utils/AppCapabilities');
 
@@ -67,14 +67,23 @@ exports.config = {
   },
 
   reporters: [
-
     [
       'cucumberjs-json', {
         jsonFolder: './reports/json',
         language: 'en',
 
       }
-    ]
+    ],
+    [
+      'browserstack', {
+        reporterOptions: {
+          browserstack: {
+            outputDir: "./"
+          }
+        },
+      }
+    ],
+
   ],
   // =====
   // Hooks
@@ -112,8 +121,24 @@ exports.config = {
 
   onPrepare: async () => {
     // Remove the `.tmp/` folder that holds the json and report files
-    removeSync('reports/html');
-    removeSync('reports/json');
+    await removeSync('reports/html');
+    await removeSync('reports/json');
+    try{
+      const directory = './browserstack-reports';
+      await readdir(directory, (err, files) => {
+        if (err) throw err;
+        for (const file of files) {
+          if(file.includes('.xml')){
+            unlink(path.join(directory, file), err => {
+              if (err) throw err;
+            });
+          }
+
+        }
+      })
+    }catch(err){
+      console.error(err);
+    }
   },
 
   async onComplete(exitCode, config, capabilities, results) {

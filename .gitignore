@@ -15,7 +15,7 @@ reports/html/assets
 reports/html/features
 reports/html/index.html
 reports/json/*.json
-
+browserstack-reports/*.xml
 
 #browsertacks
 local.log
