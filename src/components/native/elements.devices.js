@@ -65,8 +65,7 @@ module.exports = {
   productSearchResult:{
     DETAILS:() => $('//android.view.ViewGroup[@content-desc="btn-detalhes-produto"]'),
     PRODUCTNAME:(productText) =>
-      $(`//android.view.ViewGroup[@content-desc="btn-detalhes-produto"]//descendant::android.widget.TextView
-        [contains(@text, "${productText}")]`),
+      $(`//android.widget.TextView[contains(@text, "${productText}")]`),
     ZERORESULTS: () => $('//android.widget.TextView[@text="0 produtos"]')
   },
   productSearchResultIos:{
