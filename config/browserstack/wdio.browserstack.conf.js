@@ -75,15 +75,6 @@ exports.config = {
 
         }
       ],
-      [
-        'browserstack', {
-          reporterOptions: {
-            browserstack: {
-              outputDir: "./"
-            }
-          },
-        }
-      ],
 
     ],
     // =====
