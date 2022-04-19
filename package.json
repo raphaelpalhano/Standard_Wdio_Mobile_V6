@@ -62,6 +62,7 @@
     "faker-br": "^0.4.1",
     "fs-extra": "^9.1.0",
     "multiple-cucumber-html-reporter": "^1.19.0",
+    "wdio-browserstack-reporter": "^1.0.1",
     "wdio-cucumberjs-json-reporter": "^2.0.4"
   }
 }
