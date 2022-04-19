@@ -64,12 +64,15 @@ module.exports = {
   },
   productSearchResult:{
     DETAILS:() => $('//android.view.ViewGroup[@content-desc="btn-detalhes-produto"]'),
-    ACESSDETAILS:(productText) => $(`//android.widget.TextView[@text="${productText}"]`),
+    PRODUCTNAME:(productText) =>
+      $(`//android.view.ViewGroup[@content-desc="btn-detalhes-produto"]//descendant::android.widget.TextView
+        [contains(@text, "${productText}")]`),
     ZERORESULTS: () => $('//android.widget.TextView[@text="0 produtos"]')
   },
   productSearchResultIos:{
     DETAILS:() => $('//XCUIElementTypeOther[@name="btn-detalhes-produto"]'),
-    ACESSDETAILS:(productText) => $(`//XCUIElementTypeButton[contains(@name, "${productText}")]`),
+    PRODUCTNAME:(productText) => $(`//XCUIElementTypeOther[contains(@name, "btn-detalhes-produto")]
+        //descendant::XCUIElementTypeStaticText[contains(@value, "${productText}")]`), // IMPEDIMENTO: NECESSÁRIO ELEMENTO
     ZERORESULTS: () => $('//XCUIElementTypeStaticText[@name="0 produtos"]')
   },
   productDetails:{

@@ -1,9 +1,12 @@
 {
   "compilerOptions": {
-      "types": [
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "types": [
           "node",
           "webdriverio/async",
           "@wdio/cucumber-framework"
-      ]
+      ],
+    "target": "ES5"
   }
 }
