@@ -11,7 +11,7 @@ Feature: Pesquisa de produtos
       Then deve exibir o produto "Fralda Pampers Confort Sec P 50 Unidades..."
 
 
-    @funcionalAndroid
+    @funcionalAndroid  @funcionalIos
     Scenario: Pesquisa inválida de produtos
       When busca pelo produto "XCW"
       Then deve exibir o valor "0 produtos"
