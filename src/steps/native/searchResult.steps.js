@@ -16,7 +16,3 @@ Then(`deve exibir o valor {string}`, async (value) => {
 });
 
 
-Then('deve exibir um resultado maior que zero', async () => {
-  const result = SearchResultScreen.getStaticResult();
-  await expect(result).not.eq('0 produtos');
-});

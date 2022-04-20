@@ -15,7 +15,3 @@ When(`busca pelo codigo de referencia {string}`, async (codReferencia) => {
   await SearchBarScreen.searchProduct(codReferencia);
 });
 
-
-When(`buscar pelo termo mais buscado`, async (order) => {
-  await SearchBarScreen.goToOrder(order);
-});

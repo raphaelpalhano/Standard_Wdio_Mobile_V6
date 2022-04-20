@@ -21,9 +21,4 @@ Feature: Pesquisa de produtos
       When busca pelo codigo de referencia "48023"
       Then deve exibir o produto "Fralda Pampers Confort Sec P 50 Unidades..."
 
-    @impedido
-    Scenario: Busca por termos mais buscados
-        When buscar pelo "1º" termo mais buscado
-        Then deve exibir um resultado maior que zero
-
 
