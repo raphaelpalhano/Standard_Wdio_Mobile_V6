@@ -5,7 +5,7 @@ Feature: Pesquisa de produtos
     Background: Acessando a barra de pesquisa
       Given o acesso a barra de pesquisa
 
-     @funcionalAndroid
+    @funcionalAndroid
     Scenario: Pesquisa válida de produtos
       When busca pelo produto "Fralda Pampers Confort Sec P 50 Unidades"
       Then deve exibir o produto "Fralda Pampers Confort Sec P 50 Unidades..."
