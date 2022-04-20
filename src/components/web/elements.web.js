@@ -65,12 +65,12 @@ module.exports = {
   productSearchResult:{
     DETAILS:() => $('//android.view.ViewGroup[@content-desc="btn-detalhes-produto"]'),
     ACESSDETAILS:(productText) => $(`//android.widget.TextView[@text="${productText}"]`),
-    ZERORESULTS: () => $('//android.widget.TextView[@text="0 produtos"]')
+    RESULTTEXT: (result) => $(`//android.widget.TextView[@text="${result}"]`)
   },
   productSearchResultIos:{
     DETAILS:() => $('//XCUIElementTypeOther[@name="btn-detalhes-produto"]'),
     ACESSDETAILS:(productText) => $(`//XCUIElementTypeButton[contains(@name, "${productText}")]`),
-    ZERORESULTS: () => $('//XCUIElementTypeStaticText[@name="0 produtos"]')
+    RESULTTEXT: (result) => $(`//XCUIElementTypeStaticText[@name="${result}"]`)
   },
   productDetails:{
     PRODUCT:(text) => $(`//android.widget.TextView[@text="${text}"]`)

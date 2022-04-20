@@ -17,5 +17,10 @@ export class SearchBarScreen extends BaseScreen{
   }
 
 
+  static async goToOrder(order){
+    await (await ScreenManagerMobile.headerElements.ORDINATION(order)).click();
+  }
+
+
 
 }

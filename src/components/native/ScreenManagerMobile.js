@@ -26,7 +26,7 @@ module.exports = class ScreenManagerMobile{
   }
 
   static async setProductSeachResult(){
-    this.productsearchResultElements = await selectorDevices.productSearchResult(driver.isAndroid);
+    this.productSearchResultElements = await selectorDevices.productSearchResult(driver.isAndroid);
   }
 
   static async setProductDetails(){

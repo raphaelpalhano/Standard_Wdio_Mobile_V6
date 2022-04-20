@@ -30,8 +30,6 @@ export class Factory {
     const nomecontroll = nomeCompleto.length > 3 ? nomeCompleto.splice(0,1) : nomeCompleto;
     switch (type) {
     case 'valid':
-
-
       return {
         cpf: faker.br.cpf(),
         nome: nomecontroll[0],

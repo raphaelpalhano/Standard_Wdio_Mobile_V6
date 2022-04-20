@@ -17,11 +17,15 @@ module.exports = {
     SEARCHBAR:() => $('~btn-pesquisa'),
     SEARCHINPUT:() => $('~input-pesquisa'),
     MAGNIFYINGLASS:() => $('~btn-pesquisar-lupa'),
+    ORDINATION:(order) => $(`//android.widget.TextView[contains(@text, "${order}")]`),
+    ORDENATIONONE:() => $('//android.widget.ScrollView[@index="3"]'),
   },
   headerIos:{
     SEARCHBAR:() => $('~btn-pesquisa'),
     SEARCHINPUT:() => $( '~input-pesquisa'),
     MAGNIFYINGLASS:() => $( '~btn-pesquisar-lupa'),
+    ORDINATION: (order) => $(`//android.widget.TextView[contains(@text, "${order}")]`),
+    ORDENATIONONE:() => $('//android.widget.ScrollView[@index="3"]').$$('android.view.ViewGroup')[2],
   },
 
   menuApp:{
@@ -66,13 +70,15 @@ module.exports = {
     DETAILS:() => $('//android.view.ViewGroup[@content-desc="btn-detalhes-produto"]'),
     PRODUCTNAME:(productText) =>
       $(`//android.widget.TextView[contains(@text, "${productText}")]`),
-    ZERORESULTS: () => $('//android.widget.TextView[@text="0 produtos"]')
+    RESULTTEXT: (result) => $(`//android.widget.TextView[@text="${result}"]`),
+    STATICRESULT: () => $('//android.widget.TextView[@text="61 produtos"]'),
   },
   productSearchResultIos:{
     DETAILS:() => $('//XCUIElementTypeOther[@name="btn-detalhes-produto"]'),
     PRODUCTNAME:(productText) => $(`//XCUIElementTypeOther[contains(@name, "btn-detalhes-produto")]
         //descendant::XCUIElementTypeStaticText[contains(@value, "${productText}")]`), // IMPEDIMENTO: NECESSÁRIO ELEMENTO
-    ZERORESULTS: () => $('//XCUIElementTypeStaticText[@name="0 produtos"]')
+    RESULTTEXT: (result) => $(`//XCUIElementTypeStaticText[@name="${result}"]`),
+    STATICRESULT: () => $('//android.widget.TextView[@index="5"]'),
   },
   productDetails:{
     PRODUCT:(text) => $(`//android.widget.TextView[@text="${text}"]`)
