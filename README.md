@@ -28,7 +28,7 @@
 
 - WebdriverIO v6
 - cucumber v6
-- Node version 15.14
+- Node version 16.14
 - Appium
 
 # Auxiliares
