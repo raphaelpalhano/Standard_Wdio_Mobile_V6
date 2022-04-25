@@ -104,7 +104,7 @@ exports.config = {
     await driver.terminateApp(AppCapabilities.appId);
   },
 
-  afterStep: async function (step, scenario, result) {
+  afterStep: async(step, scenario, result) => {
 
     cucumberJson.attach(await driver.takeScreenshot(), 'image/png');
   },
@@ -136,6 +136,8 @@ exports.config = {
     await removeSync('reports/html');
     await removeSync('reports/json');
     await removeSync('allure-results');
+    await removeSync('allure-report');
+
   },
 
   onComplete: async (exitCode, config, capabilities, results) => {
