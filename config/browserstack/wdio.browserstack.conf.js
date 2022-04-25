@@ -1,5 +1,6 @@
 const { generate } = require('multiple-cucumber-html-reporter');
 const browserstack = require('browserstack-local');
+const allure = require('allure-commandline');
 const cucumberJson = require('wdio-cucumberjs-json-reporter').default;
 const allureReporter = require('@wdio/allure-reporter').default
 const ScreenManagerMobile = require('../../src/components/native/ScreenManagerMobile');
