@@ -2,3 +2,5 @@ reports
 config/
 node_modules/
 apps/
+allure-report/
+allure-results/

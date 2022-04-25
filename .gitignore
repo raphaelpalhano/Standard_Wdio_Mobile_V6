@@ -15,7 +15,12 @@ reports/html/assets
 reports/html/features
 reports/html/index.html
 reports/json/*.json
+allure-results/*.png
+allure-results/*.xml
+allure-report/*
+!allure-report/allure.txt
 browserstack-reports/*.xml
+
 
 #browsertacks
 local.log

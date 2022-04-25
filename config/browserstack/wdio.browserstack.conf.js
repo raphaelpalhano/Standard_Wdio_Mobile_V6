@@ -69,23 +69,12 @@ exports.config = {
 
     reporters: [
       [
-        'cucumberjs-json', {
-          jsonFolder: './reports/json',
-          language: 'en',
-
-        }
-      ],
-      [
-        'browserstack', {
-          reporterOptions: {
-            browserstack: {
-              outputDir: "./"
-            }
-          },
-        }
-      ],
-
-    ],
+          'cucumberjs-json', {
+              jsonFolder: './reports/json',
+              language: 'en',
+          }
+      ]
+  ],
     // =====
     // Hooks
     // =====

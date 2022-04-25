@@ -19,7 +19,8 @@
     "androidBrowser": "wdio ./config/appium/android/androidBrowser.config.js",
     "iosBrowser": "wdio ./config/appium/Ios/iosBrowser.config.js",
     "lint": "eslint --fix --ext .js,.jsx .",
-    "code:prettier": "prettier --check \"**/*.js*\""
+    "code:prettier": "prettier --check \"**/*.js*\"",
+    "report-allure": "allure generate allure-results --clean"
   },
   "keywords": [
     "Appium",
@@ -38,6 +39,7 @@
     "@babel/core": "^7.17.5",
     "@babel/preset-env": "^7.16.11",
     "@babel/register": "^7.17.0",
+    "@wdio/allure-reporter": "^6.11.0",
     "@wdio/appium-service": "^6.12.1",
     "@wdio/browserstack-service": "^6.12.1",
     "@wdio/cli": "^6.12.1",
@@ -54,15 +56,15 @@
     "eslint-plugin-import": "^2.25.4",
     "husky": "^4.3.1",
     "prettier": "^1.19.1",
-    "wdio-chromedriver-service": "^6.0.4"
+    "wdio-chromedriver-service": "^6.0.4",
+    "wdio-cucumberjs-json-reporter": "^2.0.4"
   },
   "dependencies": {
+    "allure-commandline": "^2.17.2",
     "chai": "^4.3.6",
     "cucumber": "^7.0.0-rc.0",
     "faker-br": "^0.4.1",
     "fs-extra": "^9.1.0",
-    "multiple-cucumber-html-reporter": "^1.19.0",
-    "wdio-browserstack-reporter": "^1.0.1",
-    "wdio-cucumberjs-json-reporter": "^2.0.4"
+    "multiple-cucumber-html-reporter": "^1.19.0"
   }
 }
