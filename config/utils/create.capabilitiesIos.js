@@ -1,4 +1,4 @@
-const createCapabilitiesIos = (DeviceInfo) => {
+const createCapabilitiesiOS = (DeviceInfo) => {
   const listObjects = new Array();
   let device = {};
   for(let count = 0; count < DeviceInfo.deviceName().length; count++){
@@ -6,7 +6,7 @@ const createCapabilitiesIos = (DeviceInfo) => {
         'cjson:metadata': {
           device: DeviceInfo.deviceName()[count],
           platform: {
-              name: 'Ios',
+              name: 'iOS',
               version:  DeviceInfo.osVersion()[count]
           },
           browser: {
@@ -19,7 +19,7 @@ const createCapabilitiesIos = (DeviceInfo) => {
               version: '2.2.69',
           },
       },
-      platformName: 'Ios',
+      platformName: 'iOS',
       project: DeviceInfo.project(),
       build: DeviceInfo.build(),
       name: DeviceInfo.name(),
@@ -34,4 +34,4 @@ const createCapabilitiesIos = (DeviceInfo) => {
   return listObjects;
 }
 
-module.exports = createCapabilitiesIos;
+module.exports = createCapabilitiesiOS;

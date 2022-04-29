@@ -1,32 +1,32 @@
 const {config} = require('../wdio.conf');
-const IosInfo = require('./IosInfo');
+const iOSInfo = require('./iOSInfo');
 
 // Appium capabilities
 config.capabilities = [
   {
-    /* 'cjson:metadata': {
-            device: 'MacBook Pro 15',
+     'cjson:metadata': {
+            device: iOSInfo.deviceName(),
             platform: {
-                name: 'OSX',
-                version: '10.12.6'
+                name: 'iOS',
+                version: iOSInfo.platFormVersion()
             },
             browser: {
-                name: 'chrome',
-                version: '58',
+              name: 'chrome',
+              version: '100.0',
             },
             // for an app
             app: {
-                name: 'name.of.app.ipa',
-                version: '1.2.3',
+              name: 'Super app Pague menos',
+              version: '2.2.69',
             },
-        }, */
+        },
     noReset: true,
     fullReset: false,
     maxInstances: 1,
     automationName: 'XCUITest',
-    deviceName: IosInfo.deviceName(),
-    platformVersion: IosInfo.platFormVersion(),
-    app: IosInfo.appName() // use - path.resolve(`./apps/${IosInfo.appName()}`) if passing a custom app
+    deviceName: iOSInfo.deviceName(),
+    platformVersion: iOSInfo.platFormVersion(),
+    app: iOSInfo.appName() // use - path.resolve(`./apps/${IosInfo.appName()}`) if passing a custom app
   }
 
 

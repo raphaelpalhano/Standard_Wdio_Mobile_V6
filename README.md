@@ -70,7 +70,7 @@
  4. platformVersion
  appName
 
-- config/android.config.js
+- config/appium/android/android.config.js
 ~~~js
        config.capabilities = [
     {

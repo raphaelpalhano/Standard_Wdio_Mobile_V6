@@ -9,15 +9,15 @@ class AndroidStackInfo {
     }
 
     static deviceName() {
-        return ['Samsung Galaxy S10']; // pass the udid or devicename
+        return ['Samsung Galaxy S21']; // pass the udid or devicename
     }
 
     static osVersion() {
-        return ['9.0']; // pass the platform version
+        return ['12.0']; // pass the platform version
     }
 
     static appName() {
-        return 'bs://bef6388a43f9b5266f85c5ba1b16674b92446260'; // pass the apk name
+        return 'bs://e8559a3a5210eccd623e36441183752127694e0a'; // pass the apk name
     }
 
     static name(){

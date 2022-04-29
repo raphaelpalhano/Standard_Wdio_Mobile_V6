@@ -1,7 +1,7 @@
 const selectorDevices = require('./selectors.devices');
 
 
-module.exports = class ScreenManagerMobile{
+module.exports = class ScreenManagerMobile {
 
   static async setHome(){
     this.homeElements = await selectorDevices.home(driver.isAndroid);

@@ -1,4 +1,4 @@
-class IosInfo {
+class iOSInfo {
   static deviceName() {
     return 'iPhone Simulator'; // pass the device name
   }
@@ -20,4 +20,4 @@ class IosInfo {
   }
 }
 
-module.exports = IosInfo;
+module.exports = iOSInfo;

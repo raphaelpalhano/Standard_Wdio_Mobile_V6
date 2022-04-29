@@ -1,5 +1,5 @@
 const {config} = require('../wdio.conf');
-const IosInfo = require('./IosInfo');
+const iOSInfo = require('./iOSInfo');
 
 // Appium capabilities
 config.capabilities = [
@@ -8,8 +8,8 @@ config.capabilities = [
     browserName: 'safari',
     maxInstances: 1,
     automationName: 'XCUITest',
-    deviceName: IosInfo.deviceName(),
-    platformVersion: IosInfo.platFormVersion()
+    deviceName: iOSInfo.deviceName(),
+    platformVersion: iOSInfo.platFormVersion()
   }
 ];
 

@@ -16,17 +16,22 @@ export class HomeScreen extends BaseScreen{
 
   }
 
-  static async selectAllowText(text){
-    if( await (await ScreenManagerMobile.homeElements.LOCATIONOPTIONS(text)).isDisplayed()){
-      const element = (await ScreenManagerMobile.homeElements.LOCATIONOPTIONS(text));
-      (await element.click());
-    }
+  static async selectAllowText(...text){
+    text.forEach(async option => {
+      if(await (await ScreenManagerMobile.homeElements.LOCATIONOPTIONS(option)).waitForDisplayed()){
+        (await ScreenManagerMobile.homeElements.LOCATIONOPTIONS(option)).click();
+      }
+    });
 
   }
 
 
   static async waitHome(time){
     await super.sleepForElement((await ScreenManagerMobile.menuElements.HOMETAB()), time);
+  }
+
+  static async waitDisplayed(){
+    await (await ScreenManagerMobile.menuElements.HOMETAB()).waitForDisplayed();
   }
 
 

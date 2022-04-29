@@ -1,25 +1,16 @@
 const { generate } = require('multiple-cucumber-html-reporter');
 const browserstack = require('browserstack-local');
-const allure = require('allure-commandline');
-const cucumberJson = require('wdio-cucumberjs-json-reporter').default;
-const allureReporter = require('@wdio/allure-reporter').default
 const ScreenManagerMobile = require('../../src/components/native/ScreenManagerMobile');
 const AppCapabilities = require('../utils/AppCapabilities');
 
-let allure_config = {
-  outputDir: 'allure-results',
-  disableWebdriverStepsReporting: true,
-  disableWebdriverScreenshotsReporting: false,
-  useCucumberStepReporter: true,
-  addConsoleLogs: true
-};
+
 
 exports.config = {
     // ====================
     // Runner Configuration
     // ====================
-    user: process.env.BROWSERSTACK_USERNAME || 'testesila_kPeuZm',
-    key: process.env.BROWSERSTACK_ACCESS_KEY || '4Aqpsn3F6RuoPupWaGVz',
+    user: process.env.BROWSERSTACK_USERNAME || 'browserstacktest_dos6OF',
+    key: process.env.BROWSERSTACK_ACCESS_KEY || 'qpxv5qnisxJLqxig1icL',
 
     services: [
       ['browserstack', {
@@ -77,7 +68,7 @@ exports.config = {
         retry: 0
     },
 
-    reporters: ["spec", ['allure', allure_config],
+    reporters: ["spec",
     [
         'cucumberjs-json', {
             jsonFolder: './reports/json',
@@ -104,15 +95,6 @@ exports.config = {
       await driver.terminateApp(AppCapabilities.appId);
     },
 
-    afterStep: async (step, scenario, result) => {
-
-      cucumberJson.attach(await driver.takeScreenshot(), 'image/png');
-    },
-
-    beforeFeature: async (uri, feature) => {
-      allureReporter.addStep("Iniciando Fetaure: " + feature.name);
-
-    },
 
 
     before: async () => {
@@ -158,24 +140,6 @@ exports.config = {
             jsonDir: './reports/json',
             reportPath: './reports/html',
         });
-        const reportError = new Error('Could not generate Allure report')
-        const generation = allure(['generate', 'allure-results', '--clean'])
-        return new Promise((resolve, reject) => {
-            const generationTimeout = setTimeout(
-                () => reject(reportError),
-                5000)
-
-            generation.on('exit', function(exitCode) {
-                clearTimeout(generationTimeout)
-
-                if (exitCode !== 0) {
-                    return reject(reportError)
-                }
-
-                console.log('Allure report successfully generated')
-                resolve()
-            })
-          })
     },
 
 }

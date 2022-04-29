@@ -4,7 +4,7 @@ class AndroidInfo {
   }
 
   static platFormVersion() {
-    return '10.0'; // pass the platform version
+    return '12.0'; // pass the platform version
   }
 
   static appName() {

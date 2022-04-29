@@ -1,9 +1,9 @@
-const createCapabilitiesIos = require('../../utils/create.capabilitiesIos');
+const createCapabilitiesiOS = require('../../utils/create.capabilitiesiOS');
 const {config} = require('../wdio.browserstack.conf');
-const IosStackInfo = require('./IosStackInfo');
+const iOSStackInfo = require('./iOSStackInfo');
 
 // Appium capabilities
-config.capabilities = createCapabilitiesIos(IosStackInfo)
+config.capabilities = createCapabilitiesiOS(iOSStackInfo)
 
 //config.cucumberOpts.tagExpression = '@IosApp'; // pass tag to run tests specific to android
 

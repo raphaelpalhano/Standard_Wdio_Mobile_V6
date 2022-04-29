@@ -4,23 +4,22 @@
   "description": "acelerador de android appium",
   "scripts": {
     "android": "wdio ./config/appium/android/android.config.js",
-    "ios": "wdio ./config/appium/Ios/ios.config.js",
+    "iOS": "wdio ./config/appium/iOS/iOS.config.js",
     "androidStackparallel": "wdio ./config/browserstack/android/parallel/browserStack.android.config.parallel.js",
     "androidStack": "wdio ./config/browserstack/android/browserStack.android.config.js",
-    "iosStack": "wdio ./config/browserstack/Ios/browserStack.Ios.config.js",
+    "iOSStack": "wdio ./config/browserstack/iOS/browserStack.iOS.config.js",
     "regressivoAndroid": "npm run android wdio -- --cucumberOpts.tagExpression='@regressivoAndroid'",
-    "regressivoIos": "npm run ios wdio -- --cucumberOpts.tagExpression='@regressivoIos'",
+    "regressivoiOS": "npm run iOS wdio -- --cucumberOpts.tagExpression='@regressivoiOS'",
     "funcionalAndroid": "npm run android wdio -- --cucumberOpts.tagExpression='@funcionalAndroid'",
-    "funcionalIos": "npm run ios wdio -- --cucumberOpts.tagExpression='@funcionalIos'",
+    "funcionaliOS": "npm run iOS wdio -- --cucumberOpts.tagExpression='@funcionaliOS'",
     "androidRegressivoStack": "npm run androidStack -- --cucumberOpts.tagExpression='@regressivoAndroid'",
-    "iosRegressivoStack": "npm run iosStack -- --cucumberOpts.tagExpression='@regressivoIos'",
+    "iOSRegressivoStack": "npm run iOSStack -- --cucumberOpts.tagExpression='@regressivoiOS'",
     "androidFuncionalStack": "npm run androidStack -- --cucumberOpts.tagExpression='@funcionalAndroid'",
-    "iosFuncionalStack": "npm run iosStack -- --cucumberOpts.tagExpression='@funcionalIos'",
+    "iOSFuncionalStack": "npm run iOSStack -- --cucumberOpts.tagExpression='@funcionaliOS'",
     "androidBrowser": "wdio ./config/appium/android/androidBrowser.config.js",
-    "iosBrowser": "wdio ./config/appium/Ios/iosBrowser.config.js",
+    "iOSBrowser": "wdio ./config/appium/iOS/iosBrowser.config.js",
     "lint": "eslint --fix --ext .js,.jsx .",
-    "code:prettier": "prettier --check \"**/*.js*\"",
-    "report-allure": "allure generate allure-results --clean"
+    "code:prettier": "prettier --check \"**/*.js*\""
   },
   "keywords": [
     "Appium",
@@ -39,7 +38,6 @@
     "@babel/core": "^7.17.5",
     "@babel/preset-env": "^7.16.11",
     "@babel/register": "^7.17.0",
-    "@wdio/allure-reporter": "^6.11.0",
     "@wdio/appium-service": "^6.12.1",
     "@wdio/browserstack-service": "^6.12.1",
     "@wdio/cli": "^6.12.1",
@@ -60,7 +58,6 @@
     "wdio-cucumberjs-json-reporter": "^2.0.4"
   },
   "dependencies": {
-    "allure-commandline": "^2.17.2",
     "chai": "^4.3.6",
     "cucumber": "^7.0.0-rc.0",
     "faker-br": "^0.4.1",

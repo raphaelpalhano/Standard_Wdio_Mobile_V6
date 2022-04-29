@@ -1,4 +1,4 @@
-class IosStackInfo {
+class iOSStackInfo {
 
   static project(){
    return 'Super App Pague menos - Ios'
@@ -17,7 +17,7 @@ class IosStackInfo {
   }
 
   static appName() {
-      return 'bs://213be455224db4aa3c4d58130798555c43c5c3ae'; // pass the apk name
+      return 'bs://162bb635252b7b22c0f701551d1420cd9264efb6'; // pass the apk name
   }
 
   static name(){
@@ -25,4 +25,4 @@ class IosStackInfo {
   }
 }
 
-module.exports = IosStackInfo;
+module.exports = iOSStackInfo;

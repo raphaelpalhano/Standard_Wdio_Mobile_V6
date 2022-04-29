@@ -9,14 +9,12 @@ Before(async () => {
   // const index = ScreenManagerMobile.homeElements.LISTLOCATION('0').getText().includes('Permitir') === true ? '0' : '1';
   // HomeScreen.selectAllow(index);
   if(driver.isAndroid){
-    await HomeScreen.updateLater();
-    await HomeScreen.selectAllowText('Allow');
-    await HomeScreen.waitHome(5);
+    await HomeScreen.selectAllowText('While');
+    await HomeScreen.waitHome(4.45);
   }
 
   if(driver.isIOS){
     await HomeScreen.selectAllowText('Allow');
-    await HomeScreen.updateLater();
     if(await (await ScreenManagerMobile.homeElements.LOCATIONOPTIONS('Allow')).waitForDisplayed()){
       await HomeScreen.selectAllowText('Allow');
     }
