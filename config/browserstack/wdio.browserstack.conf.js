@@ -2,7 +2,7 @@ const { generate } = require('multiple-cucumber-html-reporter');
 const browserstack = require('browserstack-local');
 const ScreenManagerMobile = require('../../src/components/native/ScreenManagerMobile');
 const AppCapabilities = require('../utils/AppCapabilities');
-require('dotenv').config({ path: './config/env/.env' })
+require('dotenv').config({ path: './env/.env' })
 
 
 exports.config = {

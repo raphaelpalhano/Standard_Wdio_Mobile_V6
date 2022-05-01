@@ -24,9 +24,10 @@ browserstack-reports/*.xml
 
 #browsertacks
 local.log
+browserstack.err
 
 #config
-config/env/.env
+
 
 
 # Optional npm cache directory
