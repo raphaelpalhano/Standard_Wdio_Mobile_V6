@@ -17,7 +17,7 @@ class AndroidStackInfo {
     }
 
     static appName() {
-        return 'bs://e8559a3a5210eccd623e36441183752127694e0a'; // pass the apk name
+        return 'bs://c9df958fb388925a18d80caa3e3761e52664d1c5'; // pass the apk name
     }
 
     static name(){

@@ -6,6 +6,7 @@
 ### Node ###
 # Logs
 npm-debug.log*
+browserstack.err
 
 # Dependency directories
 node_modules/
