@@ -2,15 +2,15 @@ const { generate } = require('multiple-cucumber-html-reporter');
 const browserstack = require('browserstack-local');
 const ScreenManagerMobile = require('../../src/components/native/ScreenManagerMobile');
 const AppCapabilities = require('../utils/AppCapabilities');
-
+require('dotenv').config({ path: './config/env/.env' })
 
 
 exports.config = {
     // ====================
     // Runner Configuration
     // ====================
-    user: process.env.BROWSERSTACK_USERNAME || 'browserstacktest_dos6OF',
-    key: process.env.BROWSERSTACK_ACCESS_KEY || 'qpxv5qnisxJLqxig1icL',
+    user: process.env.BROWSERSTACK_USERNAME,
+    key: process.env.BROWSERSTACK_ACCESS_KEY,
 
     services: [
       ['browserstack', {
