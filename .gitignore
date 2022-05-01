@@ -25,6 +25,9 @@ browserstack-reports/*.xml
 #browsertacks
 local.log
 
+#config
+config/env/.env
+
 
 # Optional npm cache directory
 .npm
