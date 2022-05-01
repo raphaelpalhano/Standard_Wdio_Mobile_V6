@@ -1,6 +1,6 @@
 {
     "hooks": {
       "pre-commit": "npm run lint",
-      "pre-push": ""
+      "pre-push": "npm run funcionalAndroid"
     }
 }
