@@ -1,7 +1,7 @@
 class iOSStackInfo {
 
   static project(){
-   return 'Super App Pague menos - Ios'
+   return 'Super App Pague menos - iOS'
   }
 
   static build(){

@@ -54,14 +54,14 @@
     "eslint-plugin-import": "^2.25.4",
     "husky": "^4.3.1",
     "prettier": "^1.19.1",
-    "wdio-chromedriver-service": "^6.0.4",
-    "wdio-cucumberjs-json-reporter": "^2.0.4"
+    "wdio-chromedriver-service": "^6.0.4"
   },
   "dependencies": {
     "chai": "^4.3.6",
-    "cucumber": "^7.0.0-rc.0",
+    "cucumber": "^6.0.7",
     "faker-br": "^0.4.1",
     "fs-extra": "^9.1.0",
-    "multiple-cucumber-html-reporter": "^1.19.0"
+    "multiple-cucumber-html-reporter": "^1.19.0",
+    "wdio-cucumberjs-json-reporter": "^2.0.4"
   }
 }

@@ -26,6 +26,7 @@ config.capabilities = [
     automationName: 'XCUITest',
     deviceName: iOSInfo.deviceName(),
     platformVersion: iOSInfo.platFormVersion(),
+    'autoGrantPermissions': 'true',
     app: iOSInfo.appName() // use - path.resolve(`./apps/${IosInfo.appName()}`) if passing a custom app
   }
 

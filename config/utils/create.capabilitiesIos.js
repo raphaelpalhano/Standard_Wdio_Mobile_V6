@@ -25,6 +25,7 @@ const createCapabilitiesiOS = (DeviceInfo) => {
       name: DeviceInfo.name(),
       device: DeviceInfo.deviceName()[count],
       os_version: DeviceInfo.osVersion()[count],
+      //'autoGrantPermissions': 'true',
       app: process.env.BROWSERSTACK_APP_ID || DeviceInfo.appName(),
       'browserstack.local': true,
       'browserstack.debug': true

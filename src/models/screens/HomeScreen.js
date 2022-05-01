@@ -16,15 +16,23 @@ export class HomeScreen extends BaseScreen{
 
   }
 
-  static async selectAllowText(...text){
-    text.forEach(async option => {
-      if(await (await ScreenManagerMobile.homeElements.LOCATIONOPTIONS(option)).waitForDisplayed()){
-        (await ScreenManagerMobile.homeElements.LOCATIONOPTIONS(option)).click();
-      }
-    });
+  static async selectAllowText(text){
+    if(await (await ScreenManagerMobile.homeElements.LOCATIONOPTIONS(text)).waitForDisplayed()){
+      await (await ScreenManagerMobile.homeElements.LOCATIONOPTIONS(text)).click();
+
+    }
 
   }
 
+  static async sleepApp(time){
+    driver.pause(time * 1000);
+  }
+
+
+  static async waitAllow(text, time){
+    await super.sleepForElement((await ScreenManagerMobile.homeElements.LOCATIONOPTIONS(text)), time);
+
+  }
 
   static async waitHome(time){
     await super.sleepForElement((await ScreenManagerMobile.menuElements.HOMETAB()), time);

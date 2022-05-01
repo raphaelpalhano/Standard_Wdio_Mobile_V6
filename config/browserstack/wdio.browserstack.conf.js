@@ -86,7 +86,6 @@ exports.config = {
       if(status === 1){
         await driver.launchApp();
         await driver.switchContext('NATIVE_APP');
-
       }
 
     },
