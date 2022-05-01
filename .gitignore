@@ -27,7 +27,7 @@ local.log
 browserstack.err
 
 #config
-env/.env
+
 
 
 # Optional npm cache directory
