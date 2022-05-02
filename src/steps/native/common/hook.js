@@ -12,7 +12,6 @@ Before(async () => {
 
   if(driver.isIOS){
     await HomeScreen.selectAllowText('Allow');
-    await HomeScreen.waitAllow('Allow', 4);
     await HomeScreen.selectAllowText('Allow');
 
 
