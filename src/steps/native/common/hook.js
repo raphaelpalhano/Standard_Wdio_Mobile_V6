@@ -5,8 +5,6 @@ import { HomeScreen } from '../../../models/screens/HomeScreen';
 
 
 Before(async () => {
-  // const index = ScreenManagerMobile.homeElements.LISTLOCATION('0').getText().includes('Permitir') === true ? '0' : '1';
-  // HomeScreen.selectAllow(index);
   if(driver.isAndroid){
     await HomeScreen.waitHome(7);
 
