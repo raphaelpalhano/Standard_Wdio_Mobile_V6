@@ -12,6 +12,7 @@ export class SearchResultScreen extends BaseScreen{
   }
 
   static async productNameInCard(productName){
+    await (await ScreenManagerMobile.productSearchResultElements.PRODUCTNAME(productName)).waitForDisplayed();
     return (await ScreenManagerMobile.productSearchResultElements.PRODUCTNAME(productName)).getText();
   }
 

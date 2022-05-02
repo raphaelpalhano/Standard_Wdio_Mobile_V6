@@ -83,7 +83,7 @@ exports.config = {
 
     beforeScenario: async (world, context) => {
       const status = await driver.queryAppState(AppCapabilities.appId);
-      if(status === 1){
+      if(status === 1 || status === 3){
         await driver.launchApp();
         await driver.switchContext('NATIVE_APP');
       }
