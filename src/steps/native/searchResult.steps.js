@@ -1,5 +1,5 @@
 import {  expect } from 'chai';
-import { Then } from 'cucumber';
+import { Then, When } from 'cucumber';
 import { SearchResultScreen } from '../../models/screens/SearchResultScreen';
 
 
@@ -10,9 +10,17 @@ Then(`deve exibir o produto {string}`, async (productName) => {
 
 
 Then(`deve exibir o valor {string}`, async (value) => {
-  const result = await  SearchResultScreen.getTextResult(value);
+  const result = await SearchResultScreen.getTextResult(value);
   await expect(result).to.be.eq(value);
   //
 });
 
 
+When(`clicar no botao Adicionar do produto {string} na result list`, async (product) => {
+  await SearchResultScreen.add(product);
+});
+
+
+Then(`deve exibir uma mensagem {string}`, async (message) => {
+  await SearchResultScreen.getAddAlert(message);
+});

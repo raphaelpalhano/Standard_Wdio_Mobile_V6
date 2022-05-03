@@ -71,15 +71,20 @@ module.exports = {
     PRODUCTNAME:(productText) =>
       $(`//android.widget.TextView[contains(@text, "${productText}")]`),
     RESULTTEXT: (result) => $(`//android.widget.TextView[@text="${result}"]`),
-    STATICRESULT: () => $('//android.widget.TextView[@text="61 produtos"]'),
-    ALERTITEMADD: () => $('//android.widget.TextView[@text="Item adicionado"]'),
+    ADDBUTTON: (product) => $(`//android.widget.TextView[contains(@text, "${product}")]
+    //ancestor::android.view.ViewGroup[@content-desc="btn-detalhes-produto"]
+    //descendant::android.view.ViewGroup[@content-desc="btn-add-produto"]`),
+    ALERTITEMADD: (text) => $(`//android.widget.TextView[@text="${text}"]`),
   },
   productSearchResultIos:{
     DETAILS:() => $('//XCUIElementTypeOther[@name="btn-detalhes-produto"]'),
     PRODUCTNAME:(productText) => $(`//XCUIElementTypeOther[contains(@name, "btn-detalhes-produto")]
         //descendant::XCUIElementTypeStaticText[contains(@value, "${productText}")]`), // IMPEDIMENTO: NECESSÁRIO ELEMENTO
     RESULTTEXT: (result) => $(`//XCUIElementTypeStaticText[@name="${result}"]`),
-    STATICRESULT: () => $('//android.widget.TextView[@index="5"]'),
+    ADDBUTTON: (product) => $(`//android.widget.TextView[contains(@text, "${product}")]
+    //ancestor::android.view.ViewGroup[@content-desc="btn-detalhes-produto"]
+    //descendant::android.view.ViewGroup[@content-desc="btn-add-produto"]`),
+    ALERTITEMADD: () => $('//android.widget.TextView[@text="Item adicionado"]'),
   },
   productDetails:{
     PRODUCT:(text) => $(`//android.widget.TextView[@text="${text}"]`)
