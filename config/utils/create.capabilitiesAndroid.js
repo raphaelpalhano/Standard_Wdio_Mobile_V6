@@ -17,7 +17,7 @@ const createCapabilitiesAndroid = (DeviceInfo) => {
           // for an app
           app: {
               name: DeviceInfo.project(),
-              version: '2.2.69',
+              version: '2.2.72',
           },
       },
       platformName: 'Android',

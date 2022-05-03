@@ -18,7 +18,7 @@ config.capabilities = [
       // for an app
       app: {
         name: 'Super app Pague menos',
-        version: '2.2.69',
+        version: '2.2.72',
       },
     },
     platformName: 'Android',

@@ -8,7 +8,7 @@ class AndroidInfo {
   }
 
   static appName() {
-    return 'app-release.apk'; // pass the apk name
+    return '72-app-release.apk'; // pass the apk name
   }
 
   static packageName(){

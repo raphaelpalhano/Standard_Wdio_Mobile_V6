@@ -122,6 +122,7 @@ exports.config = {
     generate({
       jsonDir: './reports/json',
       reportPath: './reports/html',
+      displayDuration: true,
       openReportInBrowser: true,
 
     });

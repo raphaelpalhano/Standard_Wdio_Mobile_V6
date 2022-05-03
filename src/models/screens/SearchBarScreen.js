@@ -14,6 +14,7 @@ export class SearchBarScreen extends BaseScreen{
     await (await ScreenManagerMobile.headerElements.SEARCHINPUT()).addValue(nameProduct);
     await (await ScreenManagerMobile.headerElements.MAGNIFYINGLASS()).click();
 
+
   }
 
 
