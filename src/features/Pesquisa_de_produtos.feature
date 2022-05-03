@@ -16,6 +16,7 @@ Feature: Pesquisa de produtos
       When busca pelo produto "XCW"
       Then deve exibir o valor "0 produtos"
 
+
     @funcionalAndroid
     Scenario: Pesquisa por código de referencia
       When busca pelo codigo de referencia "48023"

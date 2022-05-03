@@ -72,6 +72,7 @@ module.exports = {
       $(`//android.widget.TextView[contains(@text, "${productText}")]`),
     RESULTTEXT: (result) => $(`//android.widget.TextView[@text="${result}"]`),
     STATICRESULT: () => $('//android.widget.TextView[@text="61 produtos"]'),
+    ALERTITEMADD: () => $('//android.widget.TextView[@text="Item adicionado"]'),
   },
   productSearchResultIos:{
     DETAILS:() => $('//XCUIElementTypeOther[@name="btn-detalhes-produto"]'),
