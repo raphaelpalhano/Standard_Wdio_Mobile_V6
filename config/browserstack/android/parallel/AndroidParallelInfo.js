@@ -16,7 +16,7 @@ class AndroidParallel{
    }
 
    static appName() {
-       return 'bs://e8559a3a5210eccd623e36441183752127694e0a'; // pass the apk name
+       return 'bs://d5530fccb4cfb63818100e16f5be7158c0505b81'; // pass the apk name
    }
 
    static name(){
