@@ -9,8 +9,8 @@ exports.config = {
     // ====================
     // Runner Configuration
     // ====================
-    user: process.env.BROWSERSTACK_USERNAME || 'angelangelo_C5uVph',
-    key: process.env.BROWSERSTACK_ACCESS_KEY || 'o5qqdq8GvdLmRhc6ov2q',
+    user: process.env.BROWSERSTACK_USERNAME || 'paguemenosautoma_yS7n8Y',
+    key: process.env.BROWSERSTACK_ACCESS_KEY || 'AxQdJpkydbbvehbcVSsY',
 
     services: [
       ['browserstack', {

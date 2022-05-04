@@ -1,7 +1,7 @@
 class AndroidStackInfo {
 
     static project(){
-     return 'Super App Pague menos - Android'
+      return 'Super App Pague menos - Android'
     }
 
     static build(){
@@ -17,7 +17,7 @@ class AndroidStackInfo {
     }
 
     static appName() {
-        return 'bs://a4c1b31b43bca2431abb0bcc56996056a5968c70'; // pass the apk name
+        return 'bs://fc2494ba9fd2ae85f33b819a0daac1de9b315b76'; // pass the apk name
     }
 
     static name(){

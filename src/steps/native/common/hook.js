@@ -14,9 +14,6 @@ Before(async () => {
     await HomeScreen.selectAllowText('Allow');
     await HomeScreen.selectAllowText('Allow');
 
-
-
-
   }
 
 
