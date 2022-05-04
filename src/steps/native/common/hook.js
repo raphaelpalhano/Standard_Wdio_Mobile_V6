@@ -6,7 +6,7 @@ import { HomeScreen } from '../../../models/screens/HomeScreen';
 
 Before(async () => {
   if(driver.isAndroid){
-    await HomeScreen.waitHome(0.5);
+    await HomeScreen.waitHome(1);
 
   }
 

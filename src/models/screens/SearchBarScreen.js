@@ -11,12 +11,8 @@ export class SearchBarScreen extends BaseScreen{
   }
 
   static async searchProduct(nameProduct){
-    if(await (await ScreenManagerMobile.headerElements.SEARCHINPUT()).waitForDisplayed()){
-      await (await ScreenManagerMobile.headerElements.SEARCHINPUT()).addValue(nameProduct);
-      await (await ScreenManagerMobile.headerElements.MAGNIFYINGLASS()).click();
-    }
-
-
+    await (await ScreenManagerMobile.headerElements.SEARCHINPUT()).addValue(nameProduct);
+    await (await ScreenManagerMobile.headerElements.MAGNIFYINGLASS()).click();
 
   }
 
