@@ -140,6 +140,7 @@ exports.config = {
             reportPath: './reports/html',
             displayDuration: true,
         });
+
     },
 
 }

@@ -74,6 +74,9 @@ module.exports = {
     ADDBUTTON: (product) => $(`//android.widget.TextView[contains(@text, "${product}")]
     //ancestor::android.view.ViewGroup[@content-desc="btn-detalhes-produto"]
     //descendant::android.view.ViewGroup[@content-desc="btn-add-produto"]`),
+    FAVORITEICON: (product) => $(`//android.widget.TextView[contains(@text, "${product}")]
+    //ancestor::android.view.ViewGroup[@content-desc="btn-detalhes-produto"]
+    //descendant::android.view.ViewGroup[@NAF="true"]`),
     ALERTITEMADD: (text) => $(`//android.widget.TextView[@text="${text}"]`),
   },
   productSearchResultIos:{
@@ -84,6 +87,9 @@ module.exports = {
     ADDBUTTON: (product) => $(`//android.widget.TextView[contains(@text, "${product}")]
     //ancestor::android.view.ViewGroup[@content-desc="btn-detalhes-produto"]
     //descendant::android.view.ViewGroup[@content-desc="btn-add-produto"]`),
+    FAVORITEICON: (product) => $(`//android.widget.TextView[contains(@text, "${product}")]
+    //ancestor::android.view.ViewGroup[@content-desc="btn-detalhes-produto"]
+    //descendant::android.view.ViewGroup[@NAF="true"]`),
     ALERTITEMADD: () => $('//android.widget.TextView[@text="Item adicionado"]'),
   },
   productDetails:{

@@ -15,6 +15,10 @@ export class SearchResultScreen extends BaseScreen{
     await (await ScreenManagerMobile.productSearchResultElements.ADDBUTTON(product)).click();
   }
 
+  static async favoriteIcon(product){
+    await (await ScreenManagerMobile.productSearchResultElements.FAVORITEICON(product)).click();
+  }
+
   static async productNameInCard(productName){
     return (await ScreenManagerMobile.productSearchResultElements.PRODUCTNAME(productName)).getText();
   }

@@ -21,6 +21,11 @@ When(`clicar no botao Adicionar do produto {string} na result list`, async (prod
 });
 
 
+When(`clicar no icone favoritar do produto {string} na result list`, async (product) => {
+  await SearchResultScreen.favoriteIcon(product);
+});
+
+
 Then(`deve exibir uma mensagem {string}`, async (message) => {
   await SearchResultScreen.getAddAlert(message);
 });

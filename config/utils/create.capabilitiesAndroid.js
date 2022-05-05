@@ -28,8 +28,9 @@ const createCapabilitiesAndroid = (DeviceInfo) => {
       os_version: DeviceInfo.osVersion()[count],
       'autoGrantPermissions': 'true',
       app: process.env.BROWSERSTACK_APP_ID || DeviceInfo.appName(),
-      'browserstack.local' : 'true',
-      'browserstack.debug': 'true',
+      'browserstack.local' : true,
+      'browserstack.debug': true,
+      'browserstack.networkLogs': true
 
     }
     listObjects.push(device);
