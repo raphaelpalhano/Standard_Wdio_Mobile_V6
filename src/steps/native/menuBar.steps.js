@@ -1,5 +1,5 @@
 import { Given, When } from 'cucumber';
-import { MenuBar } from '../../models/screens/MenuBar';
+import { MenuBar } from '../../pageobject/screens/MenuBar';
 
 
 Given('o acesso ao menu Mais', async () => {

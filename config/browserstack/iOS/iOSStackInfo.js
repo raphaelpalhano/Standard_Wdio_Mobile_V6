@@ -17,7 +17,7 @@ class iOSStackInfo {
   }
 
   static appName() {
-      return 'bs://d5530fccb4cfb63818100e16f5be7158c0505b81'; // pass the apk name
+      return 'bs://6669b280fdc00a37bf94056733dc684caf7b229d'; // pass the apk name
   }
 
   static name(){

@@ -1,5 +1,5 @@
 import { Given, When } from 'cucumber';
-import { SearchBarScreen } from '../../models/screens/SearchBarScreen';
+import { SearchBarScreen } from '../../pageobject/screens/SearchBarScreen';
 
 Given('o acesso a barra de pesquisa', async () => {
   await SearchBarScreen.goToSeachBar();

@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import { Given, Then } from 'cucumber';
-import { MenuBar } from '../../models/screens/MenuBar';
-import { MoreMenuScreen } from '../../models/screens/MoreMenuScreen';
+import { MenuBar } from '../../pageobject/screens/MenuBar';
+import { MoreMenuScreen } from '../../pageobject/screens/MoreMenuScreen';
 
 const ScreenManagerMobile = require('../../components/native/ScreenManagerMobile');
 

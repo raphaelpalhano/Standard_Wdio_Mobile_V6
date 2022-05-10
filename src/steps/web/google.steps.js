@@ -1,5 +1,5 @@
 import { Given, Then } from 'cucumber';
-import {GooglePage} from '../../models/pages/GooglePage';
+import {GooglePage} from '../../pageobject/pages/GooglePage';
 
 
 Given(/^I launch the google$/, async () => {

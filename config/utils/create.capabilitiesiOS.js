@@ -16,7 +16,7 @@ const createCapabilitiesiOS = (DeviceInfo) => {
           // for an app
           app: {
               name: DeviceInfo.project(),
-              version: '2.2.69',
+              version: '2.2.72',
           },
       },
       noReset: false,
@@ -28,8 +28,8 @@ const createCapabilitiesiOS = (DeviceInfo) => {
       device: DeviceInfo.deviceName()[count],
       os_version: DeviceInfo.osVersion()[count],
       app: process.env.BROWSERSTACK_APP_ID || DeviceInfo.appName(),
-      'browserstack.local': true,
-      'browserstack.debug': true,
+      'browserstack.local': 'true',
+      'browserstack.debug': 'true',
       'browserstack.networkLogs': 'true',
     }
     listObjects.push(device);

@@ -3,14 +3,12 @@ const patternControl = require('../../utils/pattern.control');
 module.exports = {
   homeAndroid: {
     UPDATEOPTION:() => $( '//android.widget.TextView[@text="Atualizar mais tarde"]'),
-    LISTLOCATION:(index) => $(`//android.widget.Button[@index="${index}"]`),
+    CANCELOPTION:(index) => $(`//android.widget.Button[@index="${index}"]`),
     LOCATIONOPTIONS: (value) => $(`//android.widget.Button[contains(@text, "${value}")]`),
   },
-  homeIos: {
+  homeiOS: {
     UPDATEOPTION:() => $( '//XCUIElementTypeOther[@name="Atualizar mais tarde"]'),
-    LISTLOCATION:() => $('android.widget.LinearLayout'),
-    // LOCATIONOPTIONS: (value) =>
-    // $( `${selectorsControl.ios().predicate}type == 'XCUIElementTypeButton' && name CONTAINS '${value}'`),
+    CANCELOPTION:() => $( `${patternControl.ios().predicate}type == 'XCUIElementTypeButton' && name CONTAINS 'Cancel'`),
     LOCATIONOPTIONS:(text) => $(`//XCUIElementTypeButton[contains(@name, "${text}")]`)
   },
   headerAndroid:{
@@ -20,7 +18,7 @@ module.exports = {
     ORDINATION:(order) => $(`//android.widget.TextView[contains(@text, "${order}")]`),
     ORDENATIONONE:() => $('//android.widget.ScrollView[@index="3"]'),
   },
-  headerIos:{
+  headeriOS:{
     SEARCHBAR:() => $('~btn-pesquisa'),
     SEARCHINPUT:() => $( '~input-pesquisa'),
     MAGNIFYINGLASS:() => $( '~btn-pesquisar-lupa'),
@@ -35,7 +33,7 @@ module.exports = {
     FAVORITOSTAB:() => $( '~Favoritos, tab, 4 of 5'),
     MORETAB:() => $( '~Mais, tab, 5 of 5'),
   },
-  menuAppIos:{
+  menuAppiOS:{
     HOMETAB:() => $('~Home, tab, 1 of 5'),
     CATEGORIASTAB:() => $( '~Categorias, tab, 2 of 5'),
     LOJASTAB:() => $( '~Lojas, tab, 3 of 5'),
@@ -47,8 +45,8 @@ module.exports = {
     EXITBUTTON:() => $( '//android.widget.TextView[@text="Sair"]'),
     ALERTMESSAGE:(mensagem) => $(`//android.widget.TextView[@text="${mensagem}"]`)
   },
-  moreOptionsIos:{
-    ENTERBUTTON:() =>  $(`~btn-entrar`),
+  moreOptionsiOS:{
+    ENTERBUTTON:() =>  $( `${patternControl.ios().predicate}type == 'XCUIElementTypeOther' && name CONTAINS 'Entrar'`),
     EXITBUTTON:() => $(`~btn-sair`),
     ALERTMESSAGE:(mensagem) =>
       $( `${patternControl.ios().predicate}type == 'XCUIElementTypeStaticText' && name CONTAINS '${mensagem}'`),
@@ -60,7 +58,7 @@ module.exports = {
     CONTINUEBUTTON:() => $('~btn-continuar'),
     SIGNBUTTON:() => $('~btn-cadastrar')
   },
-  loginIos:{
+  loginiOS:{
     EMAIL:() => $('~input-email'),
     PASSWORD:() => $('~input-senha'),
     CONTINUEBUTTON:() => $('~btn-continuar'),
@@ -76,10 +74,10 @@ module.exports = {
     //descendant::android.view.ViewGroup[@content-desc="btn-add-produto"]`),
     FAVORITEICON: (product) => $(`//android.widget.TextView[contains(@text, "${product}")]
     //ancestor::android.view.ViewGroup[@content-desc="btn-detalhes-produto"]
-    //descendant::android.view.ViewGroup[@NAF="true"]`),
+    //descendant::android.view.ViewGroup[@index="0"]`),
     ALERTITEMADD: (text) => $(`//android.widget.TextView[@text="${text}"]`),
   },
-  productSearchResultIos:{
+  productSearchResultiOS:{
     DETAILS:() => $('//XCUIElementTypeOther[@name="btn-detalhes-produto"]'),
     PRODUCTNAME:(productText) => $(`//XCUIElementTypeOther[contains(@name, "btn-detalhes-produto")]
         //descendant::XCUIElementTypeStaticText[contains(@value, "${productText}")]`), // IMPEDIMENTO: NECESSÁRIO ELEMENTO
@@ -95,7 +93,7 @@ module.exports = {
   productDetails:{
     PRODUCT:(text) => $(`//android.widget.TextView[@text="${text}"]`)
   },
-  productDetailsIos:{
+  productDetailsiOS:{
     PRODUCT:(text) => $(`//XCUIElementTypeStaticText[contains(@name, "${text}")]`)
   },
 

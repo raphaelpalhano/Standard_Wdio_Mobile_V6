@@ -5,28 +5,28 @@ module.exports = {
     if(condition){
       return elementsDevice.homeAndroid;
     }
-    return elementsDevice.homeIos;
+    return elementsDevice.homeiOS;
   },
 
   header:(condition) => {
     if(condition){
       return elementsDevice.headerAndroid;
     }
-    return elementsDevice.headerIos;
+    return elementsDevice.headeriOS;
   },
 
   menuApp:(condition) => {
     if(condition){
       return elementsDevice.menuApp;
     }
-    return elementsDevice.menuAppIos;
+    return elementsDevice.menuAppiOS;
   },
 
   moreOptions:(condition) => {
     if(condition){
       return elementsDevice.moreOptions;
     }
-    return elementsDevice.moreOptionsIos;
+    return elementsDevice.moreOptionsiOS;
 
   },
 
@@ -34,14 +34,14 @@ module.exports = {
     if(condition){
       return elementsDevice.login;
     }
-    return elementsDevice.loginIos;
+    return elementsDevice.loginiOS;
 
   },
   productSearchResult:(condition) => {
     if(condition){
       return elementsDevice.productSearchResult;
     }
-    return elementsDevice.productSearchResultIos;
+    return elementsDevice.productSearchResultiOS;
 
   },
 
@@ -49,7 +49,7 @@ module.exports = {
     if(condition){
       return elementsDevice.productDetails;
     }
-    return elementsDevice.productDetailsIos;
+    return elementsDevice.productDetailsiOS;
 
   },
 };

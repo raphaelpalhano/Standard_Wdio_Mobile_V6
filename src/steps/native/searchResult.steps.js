@@ -1,6 +1,6 @@
 import {  expect } from 'chai';
 import { Then, When } from 'cucumber';
-import { SearchResultScreen } from '../../models/screens/SearchResultScreen';
+import { SearchResultScreen } from '../../pageobject/screens/SearchResultScreen';
 
 
 Then(`deve exibir o produto {string}`, async (productName) => {
