@@ -16,7 +16,7 @@ Feature: Resultado da pesquisa por produtos
       Then deve exibir uma mensagem "Item adicionado"
 
 
-    @funcionalAndroid
+
     Scenario: Adicionar ao favorito durante a result list
       Given busca pelo produto "Máscara Para Tratamento Pantene Bambu"
       When clicar no icone favoritar do produto "Máscara Para Tratamento Pantene Bambu" na result list
