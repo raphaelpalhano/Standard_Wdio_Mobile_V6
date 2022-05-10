@@ -30,16 +30,6 @@ export class BaseScreen{
     await element.waitForDisplayed({timeout: waitTimeInSeconds * 1000});
   }
 
-  static async waitForTimeout(element){
-    const timeTimeout = 5000;
-    await element.waitUntil(async () => {
-      return element.waitForEnabled({ timeout: 3000 });
-    }, {
-      timeout: timeTimeout,
-      timeoutMsg: `O elemento ${element} nao foi exibido em ${timeTimeout} segundos`
-    });
-    // await element.waitForDisplayed({timeout: waitTimeInSeconds * 1000});
-  }
 
 
   static async sleepForElement(element, seconds){

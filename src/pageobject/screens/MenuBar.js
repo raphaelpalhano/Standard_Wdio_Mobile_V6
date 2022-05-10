@@ -18,7 +18,7 @@ export class MenuBar extends BaseScreen{
   }
 
   static async goToHomeTab(){
-    await super.waitForElement((await ScreenManagerMobile.menuElements.HOMETAB()), 20);
+    // await super.waitForElement((await ScreenManagerMobile.menuElements.HOMETAB()), 20);
     await (await ScreenManagerMobile.menuElements.HOMETAB()).click();
   }
 

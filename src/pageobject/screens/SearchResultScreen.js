@@ -12,12 +12,12 @@ export class SearchResultScreen extends BaseScreen{
   }
 
   static async add(product){
-    await super.waitForElement((await ScreenManagerMobile.productSearchResultElements.PRODUCTNAME(product)), 20);
+    // await super.waitForElement((await ScreenManagerMobile.productSearchResultElements.PRODUCTNAME(product)), 20);
     await (await ScreenManagerMobile.productSearchResultElements.ADDBUTTON(product)).click();
   }
 
   static async favoriteIcon(product){
-    await super.waitForElement((await ScreenManagerMobile.productSearchResultElements.PRODUCTNAME(product)), 20);
+    // await super.waitForElement((await ScreenManagerMobile.productSearchResultElements.PRODUCTNAME(product)), 20);
     await super.multipleClick((await ScreenManagerMobile.productSearchResultElements.FAVORITEICON(product)), 2);
 
   }
