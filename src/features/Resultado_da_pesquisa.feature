@@ -21,3 +21,19 @@ Feature: Resultado da pesquisa por produtos
       Given busca pelo produto "Máscara Para Tratamento Pantene Bambu"
       When clicar no icone favoritar do produto "Máscara Para Tratamento Pantene Bambu" na result list
       Then deve exibir uma mensagem "Item removido dos favoritos"
+
+
+    Scenario: Filtrar por marca específica
+      Given busca pelo produto "Água Termal"
+      When clicar no icone favoritar do produto "Máscara Para Tratamento Pantene Bambu" na result list
+      Then deve exibir uma mensagem "Item removido dos favoritos"
+
+
+    Scenario: Filtrar por marca da Pague Menos
+      Given busca pelo produto "Soro Fisiológico Pague Menos"
+      When acessar os filtros
+
+      And clicar no icone favoritar do produto "Soro Fisiológico Pague Menos" na result list
+      Then deve exibir uma mensagem "Item removido dos favoritos"
+
+

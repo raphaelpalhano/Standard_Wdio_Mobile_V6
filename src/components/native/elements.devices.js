@@ -76,6 +76,10 @@ module.exports = {
     //ancestor::android.view.ViewGroup[@content-desc="btn-detalhes-produto"]
     //descendant::android.view.ViewGroup[@index="0"]`),
     ALERTITEMADD: (text) => $(`//android.widget.TextView[@text="${text}"]`),
+    BRANDS: (brand) => $(`//android.widget.TextView[contains(@text, "${brand}")]
+    //ancestor::android.view.ViewGroup[@index="4"]
+    //descendant::android.widget.CheckBox`),
+    FILTER: () => $(`//android.widget.TextView[contains(@text, "Filtros")]`)
   },
   productSearchResultiOS:{
     DETAILS:() => $('//XCUIElementTypeOther[@name="btn-detalhes-produto"]'),
@@ -89,6 +93,10 @@ module.exports = {
     //ancestor::android.view.ViewGroup[@content-desc="btn-detalhes-produto"]
     //descendant::android.view.ViewGroup[@NAF="true"]`),
     ALERTITEMADD: () => $('//android.widget.TextView[@text="Item adicionado"]'),
+    BRANDS: (brand) => $(`//android.widget.TextView[contains(@text, "${brand}")]
+    //ancestor::android.view.ViewGroup[@index="4"]
+    //descendant::android.widget.CheckBox`),
+    FILTER: () => $(`//android.widget.TextView[contains(@text, "Filtros")]`)
   },
   productDetails:{
     PRODUCT:(text) => $(`//android.widget.TextView[@text="${text}"]`)
