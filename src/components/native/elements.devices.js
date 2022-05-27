@@ -106,5 +106,3 @@ module.exports = {
   },
 
 };
-
-// IOS PENDENTE EM RELAÇÃO AO CARD DO PRODUTO NA TELA DE RESULTADO DA BUSCA
