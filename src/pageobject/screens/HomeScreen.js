@@ -42,7 +42,7 @@ export class HomeScreen extends BaseScreen{
   }
 
   static async waitHome(time){
-    await super.sleepForElement((await ScreenManagerMobile.menuElements.HOMETAB()), time);
+    await super.waitForElement((await ScreenManagerMobile.menuElements.HOMETAB()), time);
   }
 
   static async waitDisplayed(){

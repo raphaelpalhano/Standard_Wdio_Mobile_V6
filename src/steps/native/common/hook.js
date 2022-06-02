@@ -6,7 +6,7 @@ import { HomeScreen } from '../../../pageobject/screens/HomeScreen';
 
 Before(async () => {
   if(driver.isAndroid){
-    await HomeScreen.waitHome(5);
+    await HomeScreen.waitHome(8);
 
   }
 

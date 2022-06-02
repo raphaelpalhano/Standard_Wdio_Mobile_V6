@@ -8,7 +8,7 @@ class AndroidInfo {
   }
 
   static appName() {
-    return 'pagueMenosTest'; // pass the apk name
+    return 'pagueMenosTest.apk'; // pass the apk name
   }
 
   static packageName(){
