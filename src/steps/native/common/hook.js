@@ -6,14 +6,14 @@ import { HomeScreen } from '../../../pageobject/screens/HomeScreen';
 
 Before(async () => {
   if(driver.isAndroid){
-    await HomeScreen.waitHome(1);
+    await HomeScreen.waitHome(5);
 
   }
 
   if(driver.isIOS){
     await HomeScreen.selectAllowText('Allow');
     await HomeScreen.selectCancelOption();
-    await HomeScreen.waitAllow(7);
+    await HomeScreen.waitAllow(10);
     await HomeScreen.selectAllowText('Allow');
 
   }

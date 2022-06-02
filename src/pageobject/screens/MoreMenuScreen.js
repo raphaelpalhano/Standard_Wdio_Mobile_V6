@@ -20,9 +20,7 @@ export class MoreMenuScreen extends BaseScreen{
   }
 
   static async exitButton(){
-    if(await (await ScreenManagerMobile.moreElements.EXITBUTTON()).isDisplayed()){
-      await (await ScreenManagerMobile.moreElements.EXITBUTTON()).click();
-    }
+    await (await ScreenManagerMobile.moreElements.EXITBUTTON()).click();
 
   }
 

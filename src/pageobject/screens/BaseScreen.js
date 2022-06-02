@@ -22,12 +22,8 @@ export class BaseScreen{
   };
 
 
-  static async pause(seconds) {
-    browser.pause(seconds * 1000);
-  }
-
-  static async waitForElement(element, waitTimeInSeconds) {
-    await element.waitForDisplayed({timeout: waitTimeInSeconds * 1000});
+  static async waitForElement(element, time) {
+    await element.waitForDisplayed({timeout: time * 1000});
   }
 
 

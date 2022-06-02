@@ -18,7 +18,6 @@ export class HomeScreen extends BaseScreen{
 
   static async selectAllowText(text){
     if(await (await ScreenManagerMobile.homeElements.LOCATIONOPTIONS(text)).isDisplayed()){
-      await (await ScreenManagerMobile.homeElements.LOCATIONOPTIONS(text)).waitForDisplayed();
       await (await ScreenManagerMobile.homeElements.LOCATIONOPTIONS(text)).click();
 
     }
@@ -38,7 +37,7 @@ export class HomeScreen extends BaseScreen{
 
 
   static async waitAllow(text, time){
-    await super.sleepForElement((await ScreenManagerMobile.homeElements.LOCATIONOPTIONS(text)), time);
+    await super.waitForElement((await ScreenManagerMobile.homeElements.LOCATIONOPTIONS(text)), time);
 
   }
 
