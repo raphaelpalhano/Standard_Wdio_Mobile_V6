@@ -1,8 +1,8 @@
-Feature: Login do Super app
+Feature: Login Aop
 
-    Rule: Como cliente da Pague menos, quero acessar o App por meio de uma tela de Login
+    Rule: How client I want access app
 
-    Background: Acessando o menu Mais
+    Background: Menu
     Given o acesso ao menu Mais
 
 

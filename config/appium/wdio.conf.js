@@ -100,14 +100,7 @@ exports.config = {
     require('@babel/register');
     await AppCapabilities.setAppId('br.com.paguemenos.anjodaguarda',
       'br.com.paguemenos.anjodaguardaw');
-    await ScreenManagerMobile.setHome();
-    await ScreenManagerMobile.setHeader();
-    await ScreenManagerMobile.setMenu();
-    await ScreenManagerMobile.setMoreOptions();
     await ScreenManagerMobile.setLogin();
-    await ScreenManagerMobile.setProductSeachResult();
-    await ScreenManagerMobile.setProductDetails();
-
   },
 
 
@@ -124,7 +117,6 @@ exports.config = {
       reportPath: './reports/html',
       displayDuration: true,
       openReportInBrowser: true,
-
     });
   },
 
